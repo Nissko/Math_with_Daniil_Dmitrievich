@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63E64810-0CC8-4D63-82A4-312F2B01FF56}|MathProject.Users.Api\\MathProject.Users.Api.csproj|c:\\githubrepositories\\math_with_daniil_dmitrievich\\math_with_d_d\\mathproject.users.api\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63E64810-0CC8-4D63-82A4-312F2B01FF56}|MathProject.Users.Api\\MathProject.Users.Api.csproj|solutionrelative:mathproject.users.api\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A75B2CC0-2D2E-4010-B073-896A7DE38C22}|MathProject.Host.API\\MathProject.Host.API.csproj|c:\\githubrepositories\\math_with_daniil_dmitrievich\\math_with_d_d\\mathproject.host.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A75B2CC0-2D2E-4010-B073-896A7DE38C22}|MathProject.Host.API\\MathProject.Host.API.csproj|solutionrelative:mathproject.host.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d84ee353-0bef-5a41-a649-8f89aca5d84d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Users.Api\\Extensions.cs",
+              "RelativeDocumentMoniker": "MathProject.Users.Api\\Extensions.cs",
+              "ToolTip": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Users.Api\\Extensions.cs",
+              "RelativeToolTip": "MathProject.Users.Api\\Extensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T09:08:23.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Host.API\\Program.cs",
+              "RelativeDocumentMoniker": "MathProject.Host.API\\Program.cs",
+              "ToolTip": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Host.API\\Program.cs",
+              "RelativeToolTip": "MathProject.Host.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T09:07:20.043Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

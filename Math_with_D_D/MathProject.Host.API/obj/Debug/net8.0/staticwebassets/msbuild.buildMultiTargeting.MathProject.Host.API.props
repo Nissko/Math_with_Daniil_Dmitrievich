@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MathProject.Host.API.props" />
+</Project>

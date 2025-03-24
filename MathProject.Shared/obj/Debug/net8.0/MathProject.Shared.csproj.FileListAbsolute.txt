@@ -1,0 +1,12 @@
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\bin\Debug\net8.0\MathProject.Shared.deps.json
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\bin\Debug\net8.0\MathProject.Shared.dll
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\bin\Debug\net8.0\MathProject.Shared.pdb
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.AssemblyInfoInputs.cache
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.AssemblyInfo.cs
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.csproj.CoreCompileInputs.cache
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.sourcelink.json
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.dll
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\refint\MathProject.Shared.dll
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\MathProject.Shared.pdb
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\MathProject.Shared\obj\Debug\net8.0\ref\MathProject.Shared.dll

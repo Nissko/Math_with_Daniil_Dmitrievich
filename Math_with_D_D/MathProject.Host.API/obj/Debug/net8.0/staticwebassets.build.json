@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "c1MxkSTTkcw1xUr/ifY029nHC0EPhLgouKRqu6U2zX8=",
+  "Source": "MathProject.Host.API",
+  "BasePath": "_content/MathProject.Host.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
