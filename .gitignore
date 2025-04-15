@@ -516,3 +516,6 @@ fabric.properties
 *.cache
 /Math_with_D_D/.idea
 /Math_with_D_D/MathProject.Host.API/bin/Debug
+/Math_with_D_D/MathProject.Host.Infrastructure/obj/Debug/net8.0
+/Math_with_D_D/MathProject.Host.API/obj/Debug
+/Math_with_D_D/MathProject.Host.Domain/obj/Debug
