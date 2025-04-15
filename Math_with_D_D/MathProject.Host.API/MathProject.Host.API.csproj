@@ -18,8 +18,4 @@
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.0.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\MathProject.Users.Api\MathProject.Users.Api.csproj" />
-    </ItemGroup>
-
 </Project>

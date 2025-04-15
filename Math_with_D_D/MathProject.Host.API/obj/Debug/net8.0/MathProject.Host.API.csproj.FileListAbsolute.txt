@@ -7,9 +7,6 @@ C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Hos
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.API.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.API.pdb
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Humanizer.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Build.Locator.dll
@@ -29,11 +26,8 @@ C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Hos
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
@@ -117,8 +111,6 @@ C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Hos
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Users.Api.dll
-C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Users.Api.pdb
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\obj\Debug\net8.0\MathProject.Host.API.csproj.AssemblyReference.cache
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\obj\Debug\net8.0\MathProject.Host.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\obj\Debug\net8.0\MathProject.Host.API.AssemblyInfoInputs.cache

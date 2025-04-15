@@ -1,5 +1,3 @@
-using MathProject.Users.Api;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Настройка CORS
@@ -15,8 +13,6 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-/*Модули*/
-builder.Services.AddUsersModule();
 
 var app = builder.Build();
 
