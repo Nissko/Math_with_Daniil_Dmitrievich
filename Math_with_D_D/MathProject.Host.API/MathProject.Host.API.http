@@ -1,6 +1,0 @@
-@MathProject.Host.API_HostAddress = http://localhost:5267
-
-GET {{MathProject.Host.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

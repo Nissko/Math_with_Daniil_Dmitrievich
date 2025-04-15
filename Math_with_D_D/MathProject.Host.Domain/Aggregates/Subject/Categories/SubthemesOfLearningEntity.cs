@@ -1,12 +1,10 @@
-﻿using MathProject.Host.Domain.Common;
-
-namespace MathProject.Host.Domain.Aggregates.Subject;
+﻿namespace MathProject.Host.Domain.Aggregates.Subject;
 
 /// <summary>
-/// Темы обучения
-/// 1. Простейшие текстовые задачи и тд
+/// Подтемы обучения (подпункты)
+/// Прямоугольный треугольник
 /// </summary>
-public class LearningTopics : Entity
+public class SubthemesOfLearningEntity
 {
     /// <summary>
     /// Название
@@ -14,12 +12,9 @@ public class LearningTopics : Entity
     public string Name => _name;
     private string _name;
     
-    /// <summary>
-    /// Направление обучения
-    /// </summary>
-    public DirectionOfTrainingEntity DirectionOfTraining { get; private set; }
-    private Guid _directionOfTrainingId;
-    
+    public LearningTopicsEntity LearningTopicsEntity { get; private set; }
+    private Guid _learningTopicsId;
+
     #region Опции управления
 
     /// <summary>

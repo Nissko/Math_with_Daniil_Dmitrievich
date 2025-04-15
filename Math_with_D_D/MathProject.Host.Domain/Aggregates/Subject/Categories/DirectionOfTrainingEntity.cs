@@ -26,7 +26,7 @@ public class DirectionOfTrainingEntity : Entity
     /// <summary>
     /// Год подготовки
     /// </summary>
-    public string DateTrainingDir => _dateTrainingDir.ToString("DD");
+    public string DateTrainingDir => _dateTrainingDir.ToString("YYYY");
     private DateTime _dateTrainingDir;
     
     /// <summary>
@@ -53,7 +53,7 @@ public class DirectionOfTrainingEntity : Entity
 
     #region virtual
 
-    public ICollection<LearningTopics> LearningTopics { get; private set; } 
+    public ICollection<LearningTopicsEntity> LearningTopics { get; private set; } 
 
     #endregion
 }

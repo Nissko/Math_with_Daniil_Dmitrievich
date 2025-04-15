@@ -10,3 +10,9 @@ C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Hos
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\obj\Debug\net8.0\refint\MathProject.Host.Infrastructure.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\obj\Debug\net8.0\MathProject.Host.Infrastructure.pdb
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\obj\Debug\net8.0\ref\MathProject.Host.Infrastructure.dll
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\bin\Debug\net8.0\MathProject.Host.Infrastructure.runtimeconfig.json
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\bin\Debug\net8.0\MathProject.Host.Application.dll
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\bin\Debug\net8.0\MathProject.Host.Application.pdb
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\obj\Debug\net8.0\MathProject.Host.Infrastructure.csproj.AssemblyReference.cache
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\obj\Debug\net8.0\MathProj.95482C79.Up2Date
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.Infrastructure\obj\Debug\net8.0\MathProject.Host.Infrastructure.genruntimeconfig.cache
