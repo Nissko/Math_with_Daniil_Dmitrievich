@@ -514,3 +514,5 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/jetbrains,csharp
 *.cache
+/Math_with_D_D/.idea
+/Math_with_D_D/MathProject.Host.API/bin/Debug
