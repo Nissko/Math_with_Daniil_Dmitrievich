@@ -18,10 +18,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\Subject\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\MathProject.Host.Infrastructure\MathProject.Host.Infrastructure.csproj" />
     </ItemGroup>
 

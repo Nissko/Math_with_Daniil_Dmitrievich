@@ -10,9 +10,6 @@
       <Folder Include="Application\Commands\Subject\" />
       <Folder Include="Application\Models\Subject\Create\" />
       <Folder Include="Application\Queries\Subject\" />
-      <Folder Include="Application\Templates\Request\Subject\" />
-      <Folder Include="Common\Maping\Subject\" />
-      <Folder Include="DTO\" />
       <Folder Include="Exceptions\" />
     </ItemGroup>
 
@@ -22,6 +19,10 @@
       <PackageReference Include="MediatR" Version="11.0.0" />
       <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MathProject.Host.Domain\MathProject.Host.Domain.csproj" />
     </ItemGroup>
 
 </Project>

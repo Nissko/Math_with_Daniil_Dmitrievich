@@ -7,9 +7,12 @@ namespace MathProject.Host.Domain.Aggregates.Subject;
 /// </summary>
 public class SubjectEntity : Entity
 {
-    public SubjectEntity() { }
+    public SubjectEntity()
+    {
+        TrainingCategories = new HashSet<TrainingCategoryEntity>();
+    }
     
-    public SubjectEntity(string name)
+    public SubjectEntity(string name) : this()
     {
         _name = name;
     }
@@ -20,6 +23,17 @@ public class SubjectEntity : Entity
     public string Name => _name;
     private string _name;
     
+    #region virtual
+    
+    /// <summary>
+    /// Коллекция категорий подготовок
+    /// </summary>
+    public virtual ICollection<TrainingCategoryEntity> TrainingCategories { get; private set; }
+
+    #endregion
+
+    #region functions
+
     /// <summary>
     /// Метод для добавления категории
     /// </summary>
@@ -29,12 +43,18 @@ public class SubjectEntity : Entity
         TrainingCategories.Add(category);
     }
 
-    #region virtual
-    
     /// <summary>
-    /// Коллекция категорий подготовок
+    /// Метод для изменения имени
     /// </summary>
-    public virtual ICollection<TrainingCategoryEntity> TrainingCategories { get; private set; }
+    public void ChangeName(string newName)
+    {
+        if (newName == string.Empty || newName.Length == 0)
+        {
+            throw new NullReferenceException("Нельзя изменить на пустое название!");
+        }
+        
+        _name = newName;
+    }
 
     #endregion
 }

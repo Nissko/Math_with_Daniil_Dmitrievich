@@ -1540,6 +1540,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "Autofac": "8.2.1",
+          "MathProject.Host.Domain": "1.0.0",
           "MediatR": "11.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "Microsoft.EntityFrameworkCore": "9.0.4"
@@ -1549,6 +1550,16 @@
         },
         "runtime": {
           "bin/placeholder/MathProject.Host.Application.dll": {}
+        }
+      },
+      "MathProject.Host.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MathProject.Host.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MathProject.Host.Domain.dll": {}
         }
       }
     }
@@ -4097,6 +4108,11 @@
       "type": "project",
       "path": "../MathProject.Host.Application/MathProject.Host.Application.csproj",
       "msbuildProject": "../MathProject.Host.Application/MathProject.Host.Application.csproj"
+    },
+    "MathProject.Host.Domain/1.0.0": {
+      "type": "project",
+      "path": "../MathProject.Host.Domain/MathProject.Host.Domain.csproj",
+      "msbuildProject": "../MathProject.Host.Domain/MathProject.Host.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

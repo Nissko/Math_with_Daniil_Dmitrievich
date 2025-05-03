@@ -8,13 +8,18 @@ namespace MathProject.Host.Domain.Aggregates.Subject;
 /// </summary>
 public class DirectionOfTrainingEntity : Entity
 {
-    public DirectionOfTrainingEntity() { }
+    public DirectionOfTrainingEntity()
+    {
+        LearningTopics = new HashSet<LearningTopicsEntity>();
+    }
 
-    public DirectionOfTrainingEntity(string name, DateTime dateTrainingDir)
+    public DirectionOfTrainingEntity(string name, DateTime dateTrainingDir, Guid trainingCategoryId,
+        int displayOrder) : this()
     {
         _name = name;
         _dateTrainingDir = dateTrainingDir;
-        _isVisible = false;
+        _trainingCategoryId = trainingCategoryId;
+        _displayOrder = displayOrder;
     }
 
     /// <summary>
@@ -32,7 +37,7 @@ public class DirectionOfTrainingEntity : Entity
     /// <summary>
     /// Категория подготовки
     /// </summary>
-    public TrainingCategoryEntity TrainingCategory { get; private set; }
+    public virtual TrainingCategoryEntity TrainingCategory { get; private set; }
     private Guid _trainingCategoryId;
     
     #region Опции управления
@@ -46,14 +51,14 @@ public class DirectionOfTrainingEntity : Entity
     /// <summary>
     /// Порядок отображения
     /// </summary>
-    public string DisplayOrder => _displayOrder;
-    private string _displayOrder;
+    public string DisplayOrder => _displayOrder.ToString();
+    private int _displayOrder;
 
     #endregion
 
     #region virtual
 
-    public ICollection<LearningTopicsEntity> LearningTopics { get; private set; } 
+    public virtual ICollection<LearningTopicsEntity> LearningTopics { get; private set; } 
 
     #endregion
 }

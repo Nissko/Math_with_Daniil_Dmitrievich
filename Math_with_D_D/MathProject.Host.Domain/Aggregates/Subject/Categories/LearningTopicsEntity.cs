@@ -8,6 +8,18 @@ namespace MathProject.Host.Domain.Aggregates.Subject;
 /// </summary>
 public class LearningTopicsEntity : Entity
 {
+    public LearningTopicsEntity()
+    {
+        SubthemesOfLearnings = new HashSet<SubthemesOfLearningEntity>();
+    }
+
+    public LearningTopicsEntity(string name, Guid directionOfTrainingId, int displayOrder) : this()
+    {
+        _name = name;
+        _directionOfTrainingId = directionOfTrainingId;
+        _displayOrder = displayOrder;
+    }
+
     /// <summary>
     /// Название
     /// </summary>
@@ -17,7 +29,7 @@ public class LearningTopicsEntity : Entity
     /// <summary>
     /// Направление обучения
     /// </summary>
-    public DirectionOfTrainingEntity DirectionOfTraining { get; private set; }
+    public virtual DirectionOfTrainingEntity DirectionOfTraining { get; private set; }
     private Guid _directionOfTrainingId;
     
     #region Опции управления
@@ -31,14 +43,14 @@ public class LearningTopicsEntity : Entity
     /// <summary>
     /// Порядок отображения
     /// </summary>
-    public string DisplayOrder => _displayOrder;
-    private string _displayOrder;
+    public string DisplayOrder => _displayOrder.ToString();
+    private int _displayOrder;
 
     #endregion
     
     #region virtual
 
-    public ICollection<SubthemesOfLearningEntity> SubthemesOfLearnings { get; private set; } 
+    public virtual ICollection<SubthemesOfLearningEntity> SubthemesOfLearnings { get; private set; } 
 
     #endregion
 }

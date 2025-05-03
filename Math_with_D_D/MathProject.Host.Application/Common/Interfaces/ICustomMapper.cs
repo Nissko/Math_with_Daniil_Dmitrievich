@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using MathProject.Host.Application.Common.Mapping.Subject;
+using MathProject.Host.Application.Common.Mapping.Subject.Categories;
 
 namespace MathProject.Host.Application.Common.Interfaces;
 
 public interface ICustomMapper
 {
-    //TODO:Добавить свой кастомный маппер профиль
-    //CpuMapperProfile CpuMapperProfile { get; }
+    CustomTrainingCategoryMapperProfile TrainingCategoryMapperProfile { get; }
+    CustomSubjectMapperProfile SubjectMapperProfile { get; }
     IMapper AutoMapper { get; }
 }

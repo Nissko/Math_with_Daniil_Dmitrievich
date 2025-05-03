@@ -148,3 +148,5 @@ C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Hos
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.Infrastructure.dll
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.Infrastructure.pdb
 C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.Application.pdb
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.Domain.dll
+C:\GitHubRepositories\Math_with_Daniil_Dmitrievich\Math_with_D_D\MathProject.Host.API\bin\Debug\net8.0\MathProject.Host.Domain.pdb

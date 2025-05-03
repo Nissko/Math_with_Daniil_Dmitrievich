@@ -7,9 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Configurations\Subject\" />
       <Folder Include="Persistence\Providers\Migrations\" />
-      <Folder Include="Repositories\" />
     </ItemGroup>
 
     <ItemGroup>

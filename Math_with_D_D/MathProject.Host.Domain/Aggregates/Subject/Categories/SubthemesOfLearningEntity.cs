@@ -1,18 +1,29 @@
-﻿namespace MathProject.Host.Domain.Aggregates.Subject;
+﻿using MathProject.Host.Domain.Common;
+
+namespace MathProject.Host.Domain.Aggregates.Subject;
 
 /// <summary>
 /// Подтемы обучения (подпункты)
 /// Прямоугольный треугольник
 /// </summary>
-public class SubthemesOfLearningEntity
+public class SubthemesOfLearningEntity : Entity
 {
+    public SubthemesOfLearningEntity() { }
+    
+    public SubthemesOfLearningEntity(string name, Guid learningTopicsId, int displayOrder)
+    {
+        _name = name;
+        _learningTopicsId = learningTopicsId;
+        _displayOrder = displayOrder;
+    }
+
     /// <summary>
     /// Название
     /// </summary>
     public string Name => _name;
     private string _name;
     
-    public LearningTopicsEntity LearningTopicsEntity { get; private set; }
+    public virtual LearningTopicsEntity LearningTopicsEntity { get; private set; }
     private Guid _learningTopicsId;
 
     #region Опции управления
@@ -26,8 +37,8 @@ public class SubthemesOfLearningEntity
     /// <summary>
     /// Порядок отображения
     /// </summary>
-    public string DisplayOrder => _displayOrder;
-    private string _displayOrder;
+    public string DisplayOrder => _displayOrder.ToString();
+    private int _displayOrder;
 
     #endregion
 }

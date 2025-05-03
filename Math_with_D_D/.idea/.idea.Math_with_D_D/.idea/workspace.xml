@@ -13,43 +13,112 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86deb2ab-6cdd-40e6-8821-353ffd328d62" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.API/Controllers/Subject/Categories/TrainingCategoryController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.API/Controllers/Subject/SubjectController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Interfaces/Subject/Categories/ITrainingCategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Templates/Request/Subject/Categories/TrainingCategoryRequests/AddTrainingCategoriesRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Templates/Request/Subject/Categories/TrainingCategoryRequests/AddTrainingCategoryRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Templates/Request/Subject/Categories/TrainingCategoryRequests/UpdateTrainingCategoryRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Templates/Request/Subject/CreateSubjectRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Templates/Request/Subject/UpdateSubjectRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Common/Mapping/CustomMapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Common/Mapping/Subject/Categories/CustomTrainingCategoryMapperProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/Common/Mapping/Subject/CustomSubjectMapperProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/DTO/Subject/Categories/LightTrainingCategoryDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/DTO/Subject/Categories/TrainingCategoryDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Application/DTO/Subject/SubjectDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Configurations/Subject/Categories/DirectionOfTrainingConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Configurations/Subject/Categories/LearningTopicsConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Configurations/Subject/Categories/SubthemesOfLearningConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Configurations/Subject/Categories/TrainingCategoryConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Configurations/Subject/SubjectConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Repositories/Subject/Categories/TrainingCategoriesRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Repositories/Subject/SubjectRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Math_with_D_D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Math_with_D_D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/MathProject.Host.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/MathProject.Host.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/bin/Debug/net8.0/MathProject.Host.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/MathProject.Host.API.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/ref/MathProject.Host.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/ref/MathProject.Host.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/refint/MathProject.Host.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/Debug/net8.0/refint/MathProject.Host.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/MathProject.Host.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/MathProject.Host.API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/Application/Extensions/DependecyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Extensions/DependecyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/Application/Interfaces/Subject/ISubjectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/Application/Interfaces/Subject/ISubjectRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/Common/Interfaces/ICustomMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/Common/Interfaces/ICustomMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/Common/Interfaces/IMathProjectContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/Common/Interfaces/IMathProjectContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/Common/Maping/CustomMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/MathProject.Host.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/MathProject.Host.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/bin/Debug/net8.0/MathProject.Host.Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/bin/Debug/net8.0/MathProject.Host.Application.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/bin/Debug/net8.0/MathProject.Host.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/bin/Debug/net8.0/MathProject.Host.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/bin/Debug/net8.0/MathProject.Host.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/bin/Debug/net8.0/MathProject.Host.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/MathProject.Host.Application.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/ref/MathProject.Host.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/ref/MathProject.Host.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/refint/MathProject.Host.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/Debug/net8.0/refint/MathProject.Host.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/MathProject.Host.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/MathProject.Host.Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/DirectionOfTrainingEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/DirectionOfTrainingEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/LearningTopicsEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/LearningTopicsEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/SubthemesOfLearningEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/SubthemesOfLearningEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/TrainingCategoryEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/TrainingCategoryEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/SubjectEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/SubjectEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/bin/Debug/net8.0/MathProject.Host.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/bin/Debug/net8.0/MathProject.Host.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/bin/Debug/net8.0/MathProject.Host.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/bin/Debug/net8.0/MathProject.Host.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/MathProject.Host.Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/ref/MathProject.Host.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/ref/MathProject.Host.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/refint/MathProject.Host.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/Debug/net8.0/refint/MathProject.Host.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Extensions/ServiceCollectionExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/Extensions/ServiceCollectionExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/MathProject.Host.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/MathProject.Host.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/MathProjectContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/MathProjectContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/bin/Debug/net8.0/MathProject.Host.Infrastructure.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/bin/Debug/net8.0/MathProject.Host.Infrastructure.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/bin/Debug/net8.0/MathProject.Host.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/bin/Debug/net8.0/MathProject.Host.Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/bin/Debug/net8.0/MathProject.Host.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/bin/Debug/net8.0/MathProject.Host.Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/MathProject.Host.Infrastructure.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/ref/MathProject.Host.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/ref/MathProject.Host.Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/refint/MathProject.Host.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/Debug/net8.0/refint/MathProject.Host.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/MathProject.Host.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/MathProject.Host.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MathProject.Host.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Math_with_D_D.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Math_with_D_D.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +134,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/DirectionOfTrainingEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MathProject.Host.Domain/Aggregates/Subject/Categories/TrainingCategoryEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4c32958d8e8197ff3a8cad5383fa9a0f783157cc8c3f07a74cef668311de/ControllerEndpointRouteBuilderExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -167,12 +239,17 @@
       <workItem from="1744618204778" duration="2670000" />
       <workItem from="1744712488783" duration="5685000" />
       <workItem from="1744718813499" duration="26000" />
+      <workItem from="1744718904312" duration="135000" />
+      <workItem from="1746172577676" duration="21483000" />
+      <workItem from="1746244134890" duration="3110000" />
+      <workItem from="1746294448367" duration="6930000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

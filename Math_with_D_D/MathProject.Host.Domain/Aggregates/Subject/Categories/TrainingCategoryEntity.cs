@@ -8,14 +8,19 @@ namespace MathProject.Host.Domain.Aggregates.Subject;
 /// </summary>
 public class TrainingCategoryEntity : Entity
 {
-    public TrainingCategoryEntity() { }
-    
-    public TrainingCategoryEntity(string name, Guid subjectId)
+    public TrainingCategoryEntity()
+    {
+        DirectionOfTrainings = new List<DirectionOfTrainingEntity>();
+    }
+
+    public TrainingCategoryEntity(string name, Guid subjectId, int displayOrder) : this()
     {
         _name = name;
         _subjectId = subjectId;
+        _displayOrder = displayOrder;
+        _isVisible = true;
     }
-    
+
     /// <summary>
     /// Название категории подготовки
     /// </summary>
@@ -25,7 +30,7 @@ public class TrainingCategoryEntity : Entity
     /// <summary>
     /// Предмет для категории подготовки
     /// </summary>
-    public SubjectEntity Subject { get; private set; }
+    public virtual SubjectEntity Subject { get; private set; }
     private Guid _subjectId;
     
     #region Опции управления
@@ -39,8 +44,8 @@ public class TrainingCategoryEntity : Entity
     /// <summary>
     /// Порядок отображения
     /// </summary>
-    public string DisplayOrder => _displayOrder;
-    private string _displayOrder;
+    public string DisplayOrder => _displayOrder.ToString();
+    private int _displayOrder;
 
     #endregion
     
@@ -51,5 +56,35 @@ public class TrainingCategoryEntity : Entity
     /// </summary>
     public virtual ICollection<DirectionOfTrainingEntity> DirectionOfTrainings { get; private set; }
 
+    #endregion
+    
+    #region functions
+    
+    /// <summary>
+    /// Метод изменения имени
+    /// </summary>
+    public void ChangeName(string newName)
+    {
+        if (newName == string.Empty || newName.Length == 0)
+        {
+            throw new NullReferenceException("Нельзя изменить на пустое название!");
+        }
+        
+        _name = newName;
+    }
+
+    /// <summary>
+    /// Метод для изменения принадлежания к предмету
+    /// </summary>
+    public void ChangeSubject(Guid newSubjectId)
+    {
+        if (newSubjectId == Guid.Empty)
+        {
+            throw new NullReferenceException("Неправильный тип идентификатора!");
+        }
+        
+        _subjectId = newSubjectId;
+    }
+    
     #endregion
 }

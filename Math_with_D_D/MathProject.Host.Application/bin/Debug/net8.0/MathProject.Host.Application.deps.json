@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "Autofac": "8.2.1",
+          "MathProject.Host.Domain": "1.0.0",
           "MediatR": "11.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "Microsoft.EntityFrameworkCore": "9.0.4"
@@ -191,6 +192,14 @@
             "fileVersion": "9.0.425.16305"
           }
         }
+      },
+      "MathProject.Host.Domain/1.0.0": {
+        "runtime": {
+          "MathProject.Host.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -318,6 +327,11 @@
       "sha512": "sha512-Be0emq8bRmcK4eeJIFUt9+vYPf7kzuQrFs8Ef1CdGvXpq/uSve22PTSkRF09bF/J7wmYJ2DHf2v7GaT3vMXnwQ==",
       "path": "system.diagnostics.diagnosticsource/9.0.4",
       "hashPath": "system.diagnostics.diagnosticsource.9.0.4.nupkg.sha512"
+    },
+    "MathProject.Host.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
