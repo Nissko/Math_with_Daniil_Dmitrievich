@@ -1,4 +1,5 @@
-﻿using MathProject.Host.Domain.Common;
+﻿using MathProject.Host.Domain.Aggregates.Subject.Categories;
+using MathProject.Host.Domain.Common;
 
 namespace MathProject.Host.Domain.Aggregates.Subject;
 
@@ -37,7 +38,6 @@ public class SubjectEntity : Entity
     /// <summary>
     /// Метод для добавления категории
     /// </summary>
-    /// <param name="category"></param>
     public void AddTrainingCategory(TrainingCategoryEntity category)
     {
         TrainingCategories.Add(category);

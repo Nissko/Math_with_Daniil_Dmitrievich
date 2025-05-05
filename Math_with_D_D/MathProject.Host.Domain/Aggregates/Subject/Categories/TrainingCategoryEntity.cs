@@ -1,6 +1,6 @@
 ﻿using MathProject.Host.Domain.Common;
 
-namespace MathProject.Host.Domain.Aggregates.Subject;
+namespace MathProject.Host.Domain.Aggregates.Subject.Categories;
 
 /// <summary>
 /// Категория подготовки
@@ -59,6 +59,14 @@ public class TrainingCategoryEntity : Entity
     #endregion
     
     #region functions
+    
+    /// <summary>
+    /// Метод для добавления направления обучения
+    /// </summary>
+    public void AddDirectionOfTraining(DirectionOfTrainingEntity directionOfTraining)
+    {
+        DirectionOfTrainings.Add(directionOfTraining);
+    }
     
     /// <summary>
     /// Метод изменения имени

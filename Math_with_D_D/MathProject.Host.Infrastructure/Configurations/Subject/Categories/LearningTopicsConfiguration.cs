@@ -1,4 +1,4 @@
-﻿using MathProject.Host.Domain.Aggregates.Subject;
+﻿using MathProject.Host.Domain.Aggregates.Subject.Categories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -23,7 +23,7 @@ public class SubjectController : ControllerBase
     /// <summary>
     /// Получение списка предметов
     /// </summary>
-    [HttpGet("get_subjects")]
+    [HttpGet("")]
     [Consumes(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetSubjects()
     {
@@ -35,9 +35,9 @@ public class SubjectController : ControllerBase
     /// <summary>
     /// Получение определенного предмета
     /// </summary>
-    [HttpGet("get_subject")]
+    [HttpGet("{subjectId}")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetSubjectFromId([FromQuery] Guid subjectId)
+    public async Task<IActionResult> GetSubjectFromId(Guid subjectId)
     {
         if (subjectId == Guid.Empty) return BadRequest("Неверный идентификатор предмета");
         var result = await _subjectRepository.GetSubjectByIdAsync(subjectId);
@@ -48,7 +48,7 @@ public class SubjectController : ControllerBase
     /// <summary>
     /// Добавление нового предмета
     /// </summary>
-    [HttpPost("create_subject")]
+    [HttpPost("create")]
     [Consumes(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> CreateSubject([FromBody] CreateSubjectRequest newSubject)
     {
@@ -60,7 +60,7 @@ public class SubjectController : ControllerBase
     /// <summary>
     /// Добавление новых категорий подготовки
     /// </summary>
-    [HttpPost("add_training_categories_subject")]
+    [HttpPost("add/training-categories")]
     [Consumes(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> AddTrainingCategories([FromBody] AddTrainingCategoriesRequest addTrainingCategories)
     {
@@ -72,7 +72,7 @@ public class SubjectController : ControllerBase
     /// <summary>
     /// Изменение названия существующего предмета
     /// </summary>
-    [HttpPost("change_subject")]
+    [HttpPost("change")]
     [Consumes(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> ChangeSubject([FromBody] UpdateSubjectRequest updateSubject)
     {
@@ -84,9 +84,9 @@ public class SubjectController : ControllerBase
     /// <summary>
     /// Удаление предмета по Id
     /// </summary>
-    [HttpDelete("delete_subject")]
+    [HttpDelete("delete/{subjectId}")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> DeleteSubject([FromQuery] Guid subjectId)
+    public async Task<IActionResult> DeleteSubject(Guid subjectId)
     {
         await _subjectRepository.DeleteSubjectAsync(subjectId);
 

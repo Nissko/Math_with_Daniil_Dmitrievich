@@ -1,5 +1,6 @@
 ﻿using System.Net.Mime;
 using MathProject.Host.Application.Application.Interfaces.Subject.Categories;
+using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.DirectionOfTrainingRequests;
 using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.TrainingCategoryRequests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ public class TrainingCategoryController : ControllerBase
     /// <summary>
     /// Получение категорий всех предметов
     /// </summary>
-    [HttpGet("get_training_categories_subjects")]
+    [HttpGet("")]
     [Consumes(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetAllTrainingCategoriesAsync()
     {
@@ -35,21 +36,33 @@ public class TrainingCategoryController : ControllerBase
     /// <summary>
     /// Получить все категории предметов по ид предмета
     /// </summary>
-    [HttpGet("get_training_categories_from_subjectId")]
+    [HttpGet("{subjectId}")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetAllTrainingCategoriesFromSubjectIdAsync([FromQuery] Guid subjectId)
+    public async Task<IActionResult> GetAllTrainingCategoriesFromSubjectIdAsync(Guid subjectId)
     {
         var result = await _trainingCategoryRepository.GetTrainingCategoriesFromSubjectIdAsync(subjectId);
 
         return Ok(result.OrderBy(t => t.DisplayOrder));
     }
+    
+    /// <summary>
+    /// Добавление новых направлений обучения
+    /// </summary>
+    [HttpPost("add/direction-of-trainings")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    public async Task<IActionResult> AddDirectionOfTrainings([FromBody] AddDirectionOfTrainingsRequest addDirectionOfTrainings)
+    {
+        var result = await _trainingCategoryRepository.AddTrainingCategoriesAsync(addDirectionOfTrainings);
+        
+        return Ok(result);
+    }
 
     /// <summary>
     /// Изменение категории подготовки
     /// </summary>
-    [HttpPost("change_training_category")]
+    [HttpPost("change-training-category")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> ChangeSubject([FromBody] UpdateTrainingCategoryRequest updateTrainingCategory)
+    public async Task<IActionResult> ChangeTrainingCategory([FromBody] UpdateTrainingCategoryRequest updateTrainingCategory)
     {
         var result = await _trainingCategoryRepository.UpdateTrainingCategoryAsync(updateTrainingCategory);
 
@@ -59,9 +72,9 @@ public class TrainingCategoryController : ControllerBase
     /// <summary>
     /// Удаление категории подготовки
     /// </summary>
-    [HttpDelete("delete_training_сategory")]
+    [HttpDelete("delete/{trainingCategoryId}")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> DeleteSubject([FromQuery] Guid trainingCategoryId)
+    public async Task<IActionResult> DeleteSubject(Guid trainingCategoryId)
     {
         await _trainingCategoryRepository.DeleteTrainingCategoryAsync(trainingCategoryId);
 

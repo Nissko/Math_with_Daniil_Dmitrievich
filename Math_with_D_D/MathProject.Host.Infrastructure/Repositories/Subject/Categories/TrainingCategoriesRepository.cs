@@ -1,7 +1,10 @@
 ﻿using MathProject.Host.Application.Application.Interfaces.Subject.Categories;
+using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.DirectionOfTrainingRequests;
 using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.TrainingCategoryRequests;
 using MathProject.Host.Application.Common.Interfaces;
-using MathProject.Host.Application.DTO.Subject.Categories;
+using MathProject.Host.Application.DTO.Subject.CategoriesDtos;
+using MathProject.Host.Application.DTO.Subject.Lights;
+using MathProject.Host.Domain.Aggregates.Subject.Categories;
 using Microsoft.EntityFrameworkCore;
 
 namespace MathProject.Host.Infrastructure.Repositories.Subject.Categories;
@@ -17,25 +20,49 @@ public class TrainingCategoriesRepository : ITrainingCategoryRepository
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
-    public async Task<IEnumerable<TrainingCategoryDTO>> GetTrainingCategoriesAsync()
+    public async Task<IEnumerable<TrainingCategoryDto>> GetTrainingCategoriesAsync()
     {
         var trainingCategories = await _context.TrainingCategory.ToListAsync();
 
         return _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDtos(trainingCategories);
     }
 
-    public async Task<IEnumerable<TrainingCategoryDTO>> GetTrainingCategoriesFromSubjectIdAsync(Guid subjectId)
+    public async Task<IEnumerable<LightTrainingCategoryDto>> GetTrainingCategoriesFromSubjectIdAsync(Guid subjectId)
     {
         var trainingCategories = await _context.TrainingCategory.Where(t => t.Subject.Id == subjectId).ToListAsync();
-        return _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDtos(trainingCategories);
+        return _mapper.TrainingCategoryMapperProfile.GetLightTrainingCategoryDtos(trainingCategories);
     }
 
-    public async Task<TrainingCategoryDTO> UpdateTrainingCategoryAsync(
+    public async Task<TrainingCategoryDto> AddTrainingCategoriesAsync(AddDirectionOfTrainingsRequest directionOfTrainings)
+    {
+        var trainingCategory =
+            await _context.TrainingCategory.FirstOrDefaultAsync(s => s.Id == directionOfTrainings.TrainingCategoryId) ??
+            throw new NullReferenceException("Не удалось найти категорию подготовки с таким идентификатором!");
+
+        if (directionOfTrainings.DirectionOfTrainingRequests.Any())
+        {
+            foreach (var directionOfTraining in directionOfTrainings.DirectionOfTrainingRequests)
+            {
+                var newDirectionOfTrainingCategory = new DirectionOfTrainingEntity(directionOfTraining.Name,
+                    directionOfTraining.Date, trainingCategory.Id, directionOfTraining.DisplayOrder);
+
+                trainingCategory.AddDirectionOfTraining(newDirectionOfTrainingCategory);
+
+                _context.DirectionOfTraining.Add(newDirectionOfTrainingCategory);
+            }
+
+            await SaveChangesAsync(CancellationToken.None);
+        }
+
+        return _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDto(trainingCategory);
+    }
+
+    public async Task<TrainingCategoryDto> UpdateTrainingCategoryAsync(
         UpdateTrainingCategoryRequest updateTrainingCategory)
     {
         var trainingCategory =
             await _context.TrainingCategory.FirstOrDefaultAsync(t => t.Id == updateTrainingCategory.Id) ??
-            throw new NullReferenceException("Не удалось найти такую категорию подготовки");
+            throw new NullReferenceException("Не удалось найти категорию подготовки с таким идентификатором!");
 
         if (updateTrainingCategory.NewName != null && updateTrainingCategory.NewName.Length > 0)
             trainingCategory.ChangeName(updateTrainingCategory.NewName);
@@ -56,7 +83,7 @@ public class TrainingCategoriesRepository : ITrainingCategoryRepository
     public async Task DeleteTrainingCategoryAsync(Guid trainingCategoryId)
     {
         var trainingCategory = await _context.TrainingCategory.FirstOrDefaultAsync(t => t.Id == trainingCategoryId) ??
-                               throw new NullReferenceException("Не удалось найти такую категорию подготовки");
+                               throw new NullReferenceException("Не удалось найти категорию подготовки с таким идентификатором!");
 
         _context.TrainingCategory.Remove(trainingCategory);
         await SaveChangesAsync(CancellationToken.None);

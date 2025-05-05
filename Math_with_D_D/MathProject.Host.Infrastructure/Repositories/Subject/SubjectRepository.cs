@@ -4,6 +4,7 @@ using MathProject.Host.Application.Application.Templates.Request.Subject.Categor
 using MathProject.Host.Application.Common.Interfaces;
 using MathProject.Host.Application.DTO.Subject;
 using MathProject.Host.Domain.Aggregates.Subject;
+using MathProject.Host.Domain.Aggregates.Subject.Categories;
 using Microsoft.EntityFrameworkCore;
 
 namespace MathProject.Host.Infrastructure.Repositories.Subject;
@@ -19,13 +20,13 @@ public class SubjectRepository : ISubjectRepository
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
-    public async Task<IEnumerable<SubjectDTO>> GetSubjectsAsync()
+    public async Task<IEnumerable<SubjectDto>> GetSubjectsAsync()
     {
         var subject = await _context.Subject.ToListAsync();
         return _mapper.SubjectMapperProfile.GetSubjectDtos(subject);
     }
 
-    public async Task<SubjectDTO> GetSubjectByIdAsync(Guid subjectId)
+    public async Task<SubjectDto> GetSubjectByIdAsync(Guid subjectId)
     {
         var subject = await _context.Subject.FirstOrDefaultAsync(s => s.Id == subjectId) ??
                       throw new ArgumentException("Предмет не найден");
@@ -33,7 +34,7 @@ public class SubjectRepository : ISubjectRepository
         return _mapper.SubjectMapperProfile.GetSubjectDto(subject);
     }
 
-    public async Task<SubjectDTO> CreateSubjectAsync(CreateSubjectRequest newSubjectRequest)
+    public async Task<SubjectDto> CreateSubjectAsync(CreateSubjectRequest newSubjectRequest)
     {
         var subject = new SubjectEntity(newSubjectRequest.Name);
 
@@ -48,7 +49,7 @@ public class SubjectRepository : ISubjectRepository
         return _mapper.SubjectMapperProfile.GetSubjectDto(subject);
     }
 
-    public async Task<SubjectDTO> AddTrainingCategoriesAsync(AddTrainingCategoriesRequest trainingCategories)
+    public async Task<SubjectDto> AddTrainingCategoriesAsync(AddTrainingCategoriesRequest trainingCategories)
     {
         var subject = await _context.Subject.FirstOrDefaultAsync(s => s.Id == trainingCategories.SubjectId) ??
                       throw new NullReferenceException("Не удалось найти предмет с таким идентификатором!");

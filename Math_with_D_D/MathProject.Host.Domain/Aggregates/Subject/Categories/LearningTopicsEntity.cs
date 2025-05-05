@@ -1,6 +1,6 @@
 ﻿using MathProject.Host.Domain.Common;
 
-namespace MathProject.Host.Domain.Aggregates.Subject;
+namespace MathProject.Host.Domain.Aggregates.Subject.Categories;
 
 /// <summary>
 /// Темы обучения

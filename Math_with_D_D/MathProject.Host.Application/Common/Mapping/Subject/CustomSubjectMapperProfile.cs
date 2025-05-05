@@ -1,18 +1,22 @@
 ﻿using MathProject.Host.Application.Common.Interfaces;
 using MathProject.Host.Application.DTO.Subject;
-using MathProject.Host.Application.DTO.Subject.Categories;
+using MathProject.Host.Application.DTO.Subject.Lights;
 using MathProject.Host.Domain.Aggregates.Subject;
+using MathProject.Host.Domain.Aggregates.Subject.Categories;
 
 namespace MathProject.Host.Application.Common.Mapping.Subject;
 
 public class CustomSubjectMapperProfile : IMapperProfile
 {
-    public SubjectDTO GetSubjectDto(SubjectEntity subject)
+    /// <summary>
+    /// Получение ДТО предметов
+    /// </summary>
+    public SubjectDto GetSubjectDto(SubjectEntity subject)
     {
         if (subject == null)
             throw new ArgumentNullException(nameof(subject));
 
-        return new SubjectDTO
+        return new SubjectDto
         {
             Id = subject.Id,
             Name = subject.Name,
@@ -23,7 +27,10 @@ public class CustomSubjectMapperProfile : IMapperProfile
         };
     }
     
-    public IEnumerable<SubjectDTO> GetSubjectDtos(IEnumerable<SubjectEntity> subjects)
+    /// <summary>
+    /// Получение списка ДТО предметов
+    /// </summary>
+    public IEnumerable<SubjectDto> GetSubjectDtos(IEnumerable<SubjectEntity> subjects)
     {
         if (subjects == null)
             throw new ArgumentNullException(nameof(subjects));
@@ -31,14 +38,17 @@ public class CustomSubjectMapperProfile : IMapperProfile
         return subjects.Select(GetSubjectDto).ToList();
     }
 
-    private LightTrainingCategoryDTO MapTrainingCategory(TrainingCategoryEntity trainingCategory)
+    /// <summary>
+    /// Вывод облегченного TrainingCategory в ДТО предметов
+    /// </summary>
+    private LightTrainingCategoryDto MapTrainingCategory(TrainingCategoryEntity trainingCategory)
     {
         if (trainingCategory == null)
         {
-            return new LightTrainingCategoryDTO();
+            return new LightTrainingCategoryDto();
         }
 
-        return new LightTrainingCategoryDTO
+        return new LightTrainingCategoryDto
         {
             Id = trainingCategory.Id,
             Name = trainingCategory.Name,

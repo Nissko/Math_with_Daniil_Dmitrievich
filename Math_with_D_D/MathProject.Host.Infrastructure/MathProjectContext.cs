@@ -1,5 +1,6 @@
 ﻿using MathProject.Host.Application.Common.Interfaces;
 using MathProject.Host.Domain.Aggregates.Subject;
+using MathProject.Host.Domain.Aggregates.Subject.Categories;
 using MathProject.Host.Infrastructure.Configurations.Subject;
 using MathProject.Host.Infrastructure.Configurations.Subject.Categories;
 using Microsoft.EntityFrameworkCore;

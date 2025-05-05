@@ -1,6 +1,6 @@
 ﻿using MathProject.Host.Domain.Common;
 
-namespace MathProject.Host.Domain.Aggregates.Subject;
+namespace MathProject.Host.Domain.Aggregates.Subject.Categories;
 
 /// <summary>
 /// Направление обучения
@@ -31,7 +31,7 @@ public class DirectionOfTrainingEntity : Entity
     /// <summary>
     /// Год подготовки
     /// </summary>
-    public string DateTrainingDir => _dateTrainingDir.ToString("YYYY");
+    public string DateTrainingDir => _dateTrainingDir.ToString("yyyy");
     private DateTime _dateTrainingDir;
     
     /// <summary>

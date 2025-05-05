@@ -10,22 +10,22 @@ public interface ISubjectRepository
     /// <summary>
     /// Получение списка предметов
     /// </summary>
-    Task<IEnumerable<SubjectDTO>> GetSubjectsAsync();
+    Task<IEnumerable<SubjectDto>> GetSubjectsAsync();
     
     /// <summary>
     /// Получение определенного предмета
     /// </summary>
-    Task<SubjectDTO> GetSubjectByIdAsync(Guid subjectId);
+    Task<SubjectDto> GetSubjectByIdAsync(Guid subjectId);
     
     /// <summary>
     /// Добавление нового предмета
     /// </summary>
-    Task<SubjectDTO> CreateSubjectAsync(CreateSubjectRequest subjectRequest);
+    Task<SubjectDto> CreateSubjectAsync(CreateSubjectRequest subjectRequest);
     
     /// <summary>
     /// Добавление новых категорий подготовки
     /// </summary>
-    Task<SubjectDTO> AddTrainingCategoriesAsync(AddTrainingCategoriesRequest trainingCategories);
+    Task<SubjectDto> AddTrainingCategoriesAsync(AddTrainingCategoriesRequest trainingCategories);
     
     /// <summary>
     /// Изменение существующего предмета
