@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MathProject.Host.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83e6342e4ab8d7633d3b0870fd58ce85713479f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d58aae37b81b8efaf374a8ff0a451eec53046d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MathProject.Host.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MathProject.Host.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
