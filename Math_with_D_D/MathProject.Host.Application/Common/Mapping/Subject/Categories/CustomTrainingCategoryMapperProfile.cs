@@ -21,14 +21,9 @@ public class CustomTrainingCategoryMapperProfile : IMapperProfile
         {
             Id = trainingCategory.Id,
             SubjectId = trainingCategory.Subject.Id,
-            SubjectName = trainingCategory.Subject.Name,
             Name = trainingCategory.Name,
             DisplayOrder = int.Parse(trainingCategory.DisplayOrder),
-            IsVisible = trainingCategory.IsVisible,
-            DirectionOfTrainings = trainingCategory.DirectionOfTrainings
-                .Select(MapDirectionOfTraining)
-                .OrderBy(x => x.DisplayOrder)
-                .ToList()
+            IsVisible = trainingCategory.IsVisible
         };
     }
     

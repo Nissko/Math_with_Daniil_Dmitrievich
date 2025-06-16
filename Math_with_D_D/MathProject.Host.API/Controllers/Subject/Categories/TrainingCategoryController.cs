@@ -30,7 +30,8 @@ public class TrainingCategoryController : ControllerBase
     {
         var result = await _trainingCategoryRepository.GetTrainingCategoriesAsync();
 
-        return Ok(result.OrderBy(t => t.DisplayOrder).GroupBy(t => t.SubjectName));
+        /*TODO: был удален вывод DirectionOfTraining - сделать метод на их получение по id категории подготовки*/
+        return Ok(result.OrderBy(t => t.DisplayOrder).GroupBy(t => t.SubjectId));
     }
     
     /// <summary>

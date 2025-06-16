@@ -29,6 +29,7 @@ public class SubjectController : ControllerBase
     {
         var result = await _subjectRepository.GetSubjectsAsync();
         
+        /*TODO: был удален вывод TrainingCategory - сделать метод на их получение по id предмета*/
         return Ok(result);
     }
     

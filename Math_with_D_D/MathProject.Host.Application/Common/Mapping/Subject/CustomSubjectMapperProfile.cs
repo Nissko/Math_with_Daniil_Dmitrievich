@@ -19,11 +19,7 @@ public class CustomSubjectMapperProfile : IMapperProfile
         return new SubjectDto
         {
             Id = subject.Id,
-            Name = subject.Name,
-            TrainingCategories = subject.TrainingCategories
-                .Select(MapTrainingCategory)
-                .OrderBy(x => x.DisplayOrder)
-                .ToList()
+            Name = subject.Name
         };
     }
     
