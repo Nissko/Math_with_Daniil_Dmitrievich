@@ -1,6 +1,6 @@
-﻿namespace MathProject.Host.Application.DTO.Subject.Lights;
+﻿namespace MathProject.Host.Application.DTO.Subject.CategoriesDtos;
 
-public record LightDirectionOfTrainingDTO
+public record DirectionOfTrainingDTO
 {
     public Guid Id { get; init; }
     public string Name { get; init; }

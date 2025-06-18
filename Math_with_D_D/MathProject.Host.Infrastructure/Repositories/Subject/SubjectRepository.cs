@@ -24,7 +24,7 @@ public class SubjectRepository : ISubjectRepository
     public async Task<IEnumerable<SubjectDto>> GetSubjectsAsync()
     {
         var subject = await _context.Subject.ToListAsync();
-        return _mapper.SubjectMapperProfile.GetSubjectDtos(subject);
+        return await _mapper.SubjectMapperProfile.GetSubjectDtos(subject);
     }
 
     public async Task<SubjectDto> GetSubjectByIdAsync(Guid subjectId)

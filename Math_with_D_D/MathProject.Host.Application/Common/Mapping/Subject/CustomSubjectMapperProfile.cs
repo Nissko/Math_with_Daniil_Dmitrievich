@@ -1,8 +1,6 @@
 ﻿using MathProject.Host.Application.Common.Interfaces;
 using MathProject.Host.Application.DTO.Subject;
-using MathProject.Host.Application.DTO.Subject.Lights;
 using MathProject.Host.Domain.Aggregates.Subject;
-using MathProject.Host.Domain.Aggregates.Subject.Categories;
 
 namespace MathProject.Host.Application.Common.Mapping.Subject;
 
@@ -26,7 +24,7 @@ public class CustomSubjectMapperProfile : IMapperProfile
     /// <summary>
     /// Получение списка ДТО предметов
     /// </summary>
-    public IEnumerable<SubjectDto> GetSubjectDtos(IEnumerable<SubjectEntity> subjects)
+    public async Task<IEnumerable<SubjectDto>> GetSubjectDtos(IEnumerable<SubjectEntity> subjects)
     {
         if (subjects == null)
             throw new ArgumentNullException(nameof(subjects));

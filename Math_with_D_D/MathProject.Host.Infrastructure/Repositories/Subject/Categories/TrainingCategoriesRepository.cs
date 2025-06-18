@@ -25,7 +25,18 @@ public class TrainingCategoriesRepository : ITrainingCategoryRepository
 
         return await _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDtos(trainingCategories);
     }
-    
+
+    public async Task<IEnumerable<DirectionOfTrainingDTO>> GetDirectionOfTrainingsFromTrainingCategoryId(Guid trainingCategoryId)
+    {
+        var directionsOfTrainingDTO =
+            await _context.DirectionOfTraining
+                .Where(t => t.TrainingCategory.Id == trainingCategoryId)
+                .ToListAsync();
+        if (!directionsOfTrainingDTO.Any()) return new List<DirectionOfTrainingDTO>();
+
+        return await _mapper.DirectionOfTrainingMapperProfile.GetDirectionOfTrainingDtos(directionsOfTrainingDTO);
+    }
+
     public async Task<TrainingCategoryDto> AddTrainingCategoriesAsync(AddDirectionOfTrainingsRequest directionOfTrainings)
     {
         var trainingCategory =

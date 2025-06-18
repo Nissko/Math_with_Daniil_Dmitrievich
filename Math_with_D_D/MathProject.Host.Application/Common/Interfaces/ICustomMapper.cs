@@ -8,5 +8,6 @@ public interface ICustomMapper
 {
     CustomTrainingCategoryMapperProfile TrainingCategoryMapperProfile { get; }
     CustomSubjectMapperProfile SubjectMapperProfile { get; }
+    CustomDirectionOfTrainingMapperProfile DirectionOfTrainingMapperProfile { get; }
     IMapper AutoMapper { get; }
 }

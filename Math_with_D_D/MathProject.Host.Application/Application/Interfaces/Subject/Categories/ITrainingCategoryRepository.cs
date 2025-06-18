@@ -12,6 +12,12 @@ public interface ITrainingCategoryRepository
     Task<IEnumerable<TrainingCategoryDto>> GetTrainingCategoriesAsync();
     
     /// <summary>
+    /// Получение списка направлений обучения
+    /// по id-категории подготовки
+    /// </summary>
+    Task<IEnumerable<DirectionOfTrainingDTO>> GetDirectionOfTrainingsFromTrainingCategoryId(Guid trainingCategoryId);
+    
+    /// <summary>
     /// Добавление новых направлений обучения
     /// </summary>
     Task<TrainingCategoryDto> AddTrainingCategoriesAsync(AddDirectionOfTrainingsRequest directionOfTrainings);

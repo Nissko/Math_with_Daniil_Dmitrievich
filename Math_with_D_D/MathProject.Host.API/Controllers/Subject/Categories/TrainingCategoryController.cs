@@ -1,7 +1,5 @@
 ﻿using System.Net.Mime;
 using MathProject.Host.Application.Application.Interfaces.Subject.Categories;
-using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.DirectionOfTrainingRequests;
-using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.TrainingCategoryRequests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,38 +33,17 @@ public class TrainingCategoryController : ControllerBase
     }
     
     /// <summary>
-    /// Добавление новых направлений обучения
+    /// Получение списка направлений обучения
+    /// по id-категории подготовки
     /// </summary>
-    [HttpPost("add/direction-of-trainings")]
+    [HttpGet("get-direction-trainings/{trainingCategoryId}")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> AddDirectionOfTrainings([FromBody] AddDirectionOfTrainingsRequest addDirectionOfTrainings)
+    public async Task<IActionResult> GetDirectionOfTrainingsFromTrainingCategoryId(Guid trainingCategoryId)
     {
-        var result = await _trainingCategoryRepository.AddTrainingCategoriesAsync(addDirectionOfTrainings);
+        if (trainingCategoryId == Guid.Empty) return BadRequest("Неверный идентификатор категории подготовки");
+        var result =
+            await _trainingCategoryRepository.GetDirectionOfTrainingsFromTrainingCategoryId(trainingCategoryId);
         
         return Ok(result);
-    }
-
-    /// <summary>
-    /// Изменение категории подготовки
-    /// </summary>
-    [HttpPost("change-training-category")]
-    [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> ChangeTrainingCategory([FromBody] UpdateTrainingCategoryRequest updateTrainingCategory)
-    {
-        var result = await _trainingCategoryRepository.UpdateTrainingCategoryAsync(updateTrainingCategory);
-
-        return Ok(result);
-    }
-
-    /// <summary>
-    /// Удаление категории подготовки
-    /// </summary>
-    [HttpDelete("delete/{trainingCategoryId}")]
-    [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> DeleteSubject(Guid trainingCategoryId)
-    {
-        await _trainingCategoryRepository.DeleteTrainingCategoryAsync(trainingCategoryId);
-
-        return Ok("Категория подготовки успешно удалена");
     }
 }
