@@ -1,6 +1,4 @@
-﻿using MathProject.Host.Application.DTO.Subject.Lights;
-
-namespace MathProject.Host.Application.DTO.Subject;
+﻿namespace MathProject.Host.Application.DTO.Subject;
 
 public record SubjectDto
 {

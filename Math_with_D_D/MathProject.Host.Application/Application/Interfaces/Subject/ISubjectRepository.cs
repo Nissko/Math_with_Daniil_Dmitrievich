@@ -1,6 +1,7 @@
 ﻿using MathProject.Host.Application.Application.Templates.Request.Subject;
 using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.TrainingCategoryRequests;
 using MathProject.Host.Application.DTO.Subject;
+using MathProject.Host.Application.DTO.Subject.CategoriesDtos;
 using MathProject.Host.Domain.Aggregates.Subject;
 
 namespace MathProject.Host.Application.Application.Interfaces.Subject;
@@ -16,6 +17,11 @@ public interface ISubjectRepository
     /// Получение определенного предмета
     /// </summary>
     Task<SubjectDto> GetSubjectByIdAsync(Guid subjectId);
+    
+    /// <summary>
+    /// Получение категорий подготовки по id-предмета
+    /// </summary>
+    Task<IEnumerable<TrainingCategoryDto>> GetTrainingCategoryByIdAsync(Guid trainingCategoryId);
     
     /// <summary>
     /// Добавление нового предмета

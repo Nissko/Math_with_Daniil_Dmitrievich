@@ -465,7 +465,7 @@
           }
         }
       },
-      "MudBlazor/8.7.0": {
+      "MudBlazor/8.8.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components": "9.0.1",
@@ -1189,10 +1189,10 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-    "MudBlazor/8.7.0": {
-      "sha512": "dgQ2MsgJAA1y6S0KmaOcGQWIHkJKA6XedC8X4VKXGRRcS3CFtgcytzT4LAxNoklNBqeveOyiHNEk6CG8a7YHYQ==",
+    "MudBlazor/8.8.0": {
+      "sha512": "9LTen4AUh+GjXqKcrBoUxCZEEgnKx3a+82k2F7K849rfpGs/fQ1pha0sw2upMzGFIsCRfI+w8bkgZZspJCxbpQ==",
       "type": "package",
-      "path": "mudblazor/8.7.0",
+      "path": "mudblazor/8.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1210,7 +1210,7 @@
         "lib/net8.0/MudBlazor.xml",
         "lib/net9.0/MudBlazor.dll",
         "lib/net9.0/MudBlazor.xml",
-        "mudblazor.8.7.0.nupkg.sha512",
+        "mudblazor.8.8.0.nupkg.sha512",
         "mudblazor.nuspec",
         "staticwebassets/MudBlazor.min.css",
         "staticwebassets/MudBlazor.min.js"
@@ -1235,11 +1235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client\\MathProject.Client.csproj",
+      "projectUniqueName": "C:\\WorksFiles\\ErofeevClub\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client\\MathProject.Client.csproj",
       "projectName": "MathProject.Client",
-      "projectPath": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client\\MathProject.Client.csproj",
+      "projectPath": "C:\\WorksFiles\\ErofeevClub\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client\\MathProject.Client.csproj",
       "packagesPath": "C:\\Users\\niksk\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client\\obj\\",
+      "outputPath": "C:\\WorksFiles\\ErofeevClub\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1260,8 +1260,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client.Client\\MathProject.Client.Client.csproj": {
-              "projectPath": "C:\\GitHubRepositories\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client.Client\\MathProject.Client.Client.csproj"
+            "C:\\WorksFiles\\ErofeevClub\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client.Client\\MathProject.Client.Client.csproj": {
+              "projectPath": "C:\\WorksFiles\\ErofeevClub\\Math_with_Daniil_Dmitrievich\\Math_with_D_D\\MathProject.Client\\MathProject.Client.Client\\MathProject.Client.Client.csproj"
             }
           }
         }

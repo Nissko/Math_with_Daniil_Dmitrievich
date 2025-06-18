@@ -1,5 +1,4 @@
 using MudBlazor.Services;
-using MathProject.Client.Client.Pages;
 using MathProject.Client.Components;
 
 var builder = WebApplication.CreateBuilder(args);

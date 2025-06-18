@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MathProject.Client.Client",
   "resources": {
-    "hash": "sha256-XQ54b+lTZFzx/tL9WyQk7y9B5QXiTUHBrAboShVRyqg=",
+    "hash": "sha256-s1zefNFbBdYSEiv/qdoGZXVY/OrJ1n3q12xdtTIhafY=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.phaa9r44xv.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.4o2vz6uw5j.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -204,8 +204,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "MathProject.Client.Client.9c63nkw94h.wasm": "MathProject.Client.Client.wasm",
-      "MathProject.Client.Client.xshfab3zkp.pdb": "MathProject.Client.Client.pdb"
+      "MathProject.Client.Client.10z1srjh50.wasm": "MathProject.Client.Client.wasm",
+      "MathProject.Client.Client.u85nqlwbkm.pdb": "MathProject.Client.Client.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.uhsveqo9bs.js": "sha256-/ifJokfQvXKw1hEziCkYR9SOJIKSdGG/UKw5gbLWrj0="
@@ -418,10 +418,10 @@
       "WindowsBase.pe1q66fox7.wasm": "sha256-X+jubl681x6U1UjhhKVz+cjOvMv1wDBWIyyFenqJnPc=",
       "mscorlib.ypkr78tz1c.wasm": "sha256-Wkc7KpMw/bTWNoLCRv9T8olIOmCpEiJSeUZsUQEnwrA=",
       "netstandard.ifx8vojh9u.wasm": "sha256-PqpRCbO73PFsE8ik5zmAuG1kKax3c7bGhjOOeuiUcyY=",
-      "MathProject.Client.Client.9c63nkw94h.wasm": "sha256-2ck+ros26388owk9IjAY7IQoLO3R7bqAInJ5wNtRSZg="
+      "MathProject.Client.Client.10z1srjh50.wasm": "sha256-cb+T025XbgpySeyfS0aE1LBW8f0isz3T3RmgQ955AWA="
     },
     "pdb": {
-      "MathProject.Client.Client.xshfab3zkp.pdb": "sha256-4U0oaObIoKxbCdN0Bp9alg/CXCt5fbVc0e9lJmtijto="
+      "MathProject.Client.Client.u85nqlwbkm.pdb": "sha256-svdazzEEk/be5fWY9aRzhFxa6WA6a9iThh+Ps0FUNxo="
     }
   },
   "cacheBootResources": true,

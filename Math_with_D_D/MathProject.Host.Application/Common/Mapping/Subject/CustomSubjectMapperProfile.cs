@@ -33,23 +33,4 @@ public class CustomSubjectMapperProfile : IMapperProfile
 
         return subjects.Select(GetSubjectDto).ToList();
     }
-
-    /// <summary>
-    /// Вывод облегченного TrainingCategory в ДТО предметов
-    /// </summary>
-    private LightTrainingCategoryDto MapTrainingCategory(TrainingCategoryEntity trainingCategory)
-    {
-        if (trainingCategory == null)
-        {
-            return new LightTrainingCategoryDto();
-        }
-
-        return new LightTrainingCategoryDto
-        {
-            Id = trainingCategory.Id,
-            Name = trainingCategory.Name,
-            DisplayOrder = int.Parse(trainingCategory.DisplayOrder),
-            IsVisible = trainingCategory.IsVisible
-        };
-    }
 }

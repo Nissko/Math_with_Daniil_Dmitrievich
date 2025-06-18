@@ -36,3 +36,5 @@ packages/
 /Math_with_D_D/MathProject.Host.Application/obj
 /Math_with_D_D/MathProject.Host.Infrastructure/obj
 /Math_with_D_D/MathProject.Host.Application/bin
+/Math_with_D_D/MathProject.Client/MathProject.Client/obj
+/Math_with_D_D/MathProject.Client/MathProject.Client.Client/bin

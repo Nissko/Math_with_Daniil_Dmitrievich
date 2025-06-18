@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathProject.Client", "MathP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathProject.Client.Client", "MathProject.Client\MathProject.Client.Client\MathProject.Client.Client.csproj", "{BFDFA204-802D-4266-81C5-B07C64260F17}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{435F7F6E-18C0-4DCF-9D29-C228965EF45A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,7 @@ Global
 		{E47B90CB-F222-4D0B-AB2F-BBF078C268B2} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{4C66E2AB-F1BD-4A32-AC4B-2BA049038EA7} = {E47B90CB-F222-4D0B-AB2F-BBF078C268B2}
 		{BFDFA204-802D-4266-81C5-B07C64260F17} = {E47B90CB-F222-4D0B-AB2F-BBF078C268B2}
+		{435F7F6E-18C0-4DCF-9D29-C228965EF45A} = {9E0246D3-B1B5-42E1-82EA-74A89B77BCE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B70E0169-5C3E-4FA0-B3F5-96D274D0EE2B}

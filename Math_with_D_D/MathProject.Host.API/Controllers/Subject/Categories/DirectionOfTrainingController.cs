@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MathProject.Host.API.Controllers.Subject.Categories;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class DirectionOfTrainingController : ControllerBase
 {
     private readonly IMediator _mediator;

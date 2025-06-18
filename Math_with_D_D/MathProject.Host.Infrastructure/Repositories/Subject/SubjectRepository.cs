@@ -3,6 +3,7 @@ using MathProject.Host.Application.Application.Templates.Request.Subject;
 using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.TrainingCategoryRequests;
 using MathProject.Host.Application.Common.Interfaces;
 using MathProject.Host.Application.DTO.Subject;
+using MathProject.Host.Application.DTO.Subject.CategoriesDtos;
 using MathProject.Host.Domain.Aggregates.Subject;
 using MathProject.Host.Domain.Aggregates.Subject.Categories;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,17 @@ public class SubjectRepository : ISubjectRepository
                       throw new ArgumentException("Предмет не найден");
 
         return _mapper.SubjectMapperProfile.GetSubjectDto(subject);
+    }
+
+    public async Task<IEnumerable<TrainingCategoryDto>> GetTrainingCategoryByIdAsync(Guid subjectId)
+    {
+        var subject = await _context.Subject.FirstOrDefaultAsync(s => s.Id == subjectId);
+        if (subject == null) throw new ArgumentNullException($"Предмет с идентификатором {subjectId} не найден");
+
+        var trainingCategories =
+            await _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDtos(subject.TrainingCategories.ToList());
+        
+        return trainingCategories;
     }
 
     public async Task<SubjectDto> CreateSubjectAsync(CreateSubjectRequest newSubjectRequest)

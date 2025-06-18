@@ -3,7 +3,6 @@ using MathProject.Host.Application.Application.Templates.Request.Subject.Categor
 using MathProject.Host.Application.Application.Templates.Request.Subject.Categories.TrainingCategoryRequests;
 using MathProject.Host.Application.Common.Interfaces;
 using MathProject.Host.Application.DTO.Subject.CategoriesDtos;
-using MathProject.Host.Application.DTO.Subject.Lights;
 using MathProject.Host.Domain.Aggregates.Subject.Categories;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,15 +23,9 @@ public class TrainingCategoriesRepository : ITrainingCategoryRepository
     {
         var trainingCategories = await _context.TrainingCategory.ToListAsync();
 
-        return _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDtos(trainingCategories);
+        return await _mapper.TrainingCategoryMapperProfile.GetTrainingCategoryDtos(trainingCategories);
     }
-
-    public async Task<IEnumerable<LightTrainingCategoryDto>> GetTrainingCategoriesFromSubjectIdAsync(Guid subjectId)
-    {
-        var trainingCategories = await _context.TrainingCategory.Where(t => t.Subject.Id == subjectId).ToListAsync();
-        return _mapper.TrainingCategoryMapperProfile.GetLightTrainingCategoryDtos(trainingCategories);
-    }
-
+    
     public async Task<TrainingCategoryDto> AddTrainingCategoriesAsync(AddDirectionOfTrainingsRequest directionOfTrainings)
     {
         var trainingCategory =

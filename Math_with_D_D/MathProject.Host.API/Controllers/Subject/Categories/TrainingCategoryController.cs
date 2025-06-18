@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MathProject.Host.API.Controllers.Subject.Categories;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class TrainingCategoryController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -32,18 +32,6 @@ public class TrainingCategoryController : ControllerBase
 
         /*TODO: был удален вывод DirectionOfTraining - сделать метод на их получение по id категории подготовки*/
         return Ok(result.OrderBy(t => t.DisplayOrder).GroupBy(t => t.SubjectId));
-    }
-    
-    /// <summary>
-    /// Получить все категории предметов по ид предмета
-    /// </summary>
-    [HttpGet("{subjectId}")]
-    [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetAllTrainingCategoriesFromSubjectIdAsync(Guid subjectId)
-    {
-        var result = await _trainingCategoryRepository.GetTrainingCategoriesFromSubjectIdAsync(subjectId);
-
-        return Ok(result.OrderBy(t => t.DisplayOrder));
     }
     
     /// <summary>
