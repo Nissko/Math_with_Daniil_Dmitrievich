@@ -45,6 +45,12 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           script: |
+            echo "Removing old archive if exists..."
+            rm -rf ~/myapp.tar.gz || true
+
+            echo "Moving new archive..."
+            mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/myapp.tar.gz
+
             echo "Creating workspace..."
             mkdir -p ~/myapp
             cd ~/myapp
@@ -52,8 +58,16 @@ jobs:
             echo "Removing old files..."
             rm -rf *
 
-            echo "Moving archive..."
-            mv /home/root/myapp.tar.gz .
+            echo "Moving archive to workdir..."
+            cp ~/myapp.tar.gz .
+
+            echo "Checking archive integrity..."
+            if tar -tzf myapp.tar.gz > /dev/null; then
+              echo "Archive is valid."
+            else
+              echo "ERROR: Archive is corrupted or not a valid .tar.gz file!"
+              exit 1
+            fi
 
             echo "Extracting files..."
             tar -xzf myapp.tar.gz
@@ -70,8 +84,8 @@ jobs:
             fi
 
             echo "Building Docker images..."
-            docker-compose down
+            docker-compose down --remove-orphans || true
             docker-compose up -d --build
 
             echo "Cleanup..."
-            rm -f myapp.tar.gz
+            rm -f ~/myapp.tar.gz
