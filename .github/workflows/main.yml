@@ -16,13 +16,13 @@ jobs:
       - name: Create git archive
         run: |
           echo "Creating clean archive..."
-          git archive --format=tar.gz -o myapp.tar.gz HEAD
+          git archive --format=tar.gz -o archive.tar.gz HEAD
 
       - name: Check archive exists
         run: |
-          if [ -f myapp.tar.gz ]; then
+          if [ -f archive.tar.gz ]; then
             echo "Archive created successfully."
-            ls -la myapp.tar.gz
+            ls -la archive.tar.gz
           else
             echo "ERROR: Archive was NOT created!"
             exit 1
