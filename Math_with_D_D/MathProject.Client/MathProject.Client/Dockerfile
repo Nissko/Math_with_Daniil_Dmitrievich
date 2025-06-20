@@ -10,4 +10,4 @@ RUN dotnet publish -c Release -o /app/publish
 # Stage 2: Serve with nginx
 FROM nginx:alpine
 COPY --from=build /app/publish/wwwroot /usr/share/nginx/html
-COPY frontend.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
