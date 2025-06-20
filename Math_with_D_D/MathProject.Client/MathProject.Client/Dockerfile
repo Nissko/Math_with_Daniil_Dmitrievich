@@ -3,6 +3,7 @@ WORKDIR /src
 
 # Копируем нужный проект
 COPY MathProject.Client/ MathProject.Client/
+COPY MathProject.Client.Client/ MathProject.Client.Client/
 
 # Переходим в папку клиента
 WORKDIR /src/MathProject.Client
