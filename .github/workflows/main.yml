@@ -53,15 +53,13 @@ jobs:
             rm -rf *
 
             echo "Moving archive..."
-            if [ -f ~/myapp.tar.gz ]; then
-              mv ~/myapp.tar.gz .
-            else
-              echo "ERROR: myapp.tar.gz NOT FOUND on server!"
-              exit 1
-            fi
+            mv ~/myapp.tar.gz .
 
             echo "Extracting files..."
             tar -xzf myapp.tar.gz
+
+            echo "Check extracted files:"
+            ls -la
 
             echo "Checking docker-compose.yml..."
             if [ -f docker-compose.yml ]; then
