@@ -13,6 +13,7 @@ public class SubjectController : ControllerBase
     private readonly ISubjectRepository _subjectRepository;
 
     /// <summary>
+    /// Предмет
     /// TODO:
     /// Методы которые нужно сделать:
     /// 1) Получение всех предметов
@@ -65,6 +66,6 @@ public class SubjectController : ControllerBase
         if (subjectId == Guid.Empty) return BadRequest("Неверный идентификатор предмета");
         var result = await _subjectRepository.GetTrainingCategoryByIdAsync(subjectId);
         
-        return Ok(result);
+        return Ok(result.OrderBy(sbt => sbt.DisplayOrder));
     }
 }

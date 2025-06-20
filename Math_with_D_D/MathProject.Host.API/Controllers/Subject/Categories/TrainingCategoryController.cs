@@ -12,6 +12,9 @@ public class TrainingCategoryController : ControllerBase
     private readonly IMediator _mediator;
     private readonly ITrainingCategoryRepository _trainingCategoryRepository;
     
+    /// <summary>
+    /// Категория подготовки
+    /// </summary>
     public TrainingCategoryController(IMediator mediator, ITrainingCategoryRepository trainingCategoryRepository)
     {
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
@@ -20,15 +23,14 @@ public class TrainingCategoryController : ControllerBase
     }
 
     /// <summary>
-    /// Получение категорий всех предметов
+    /// Получение всех категорий подготовки
     /// </summary>
     [HttpGet("")]
     [Consumes(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetAllTrainingCategoriesAsync()
+    public async Task<IActionResult> GetAllTrainingCategories()
     {
         var result = await _trainingCategoryRepository.GetTrainingCategoriesAsync();
 
-        /*TODO: был удален вывод DirectionOfTraining - сделать метод на их получение по id категории подготовки*/
         return Ok(result.OrderBy(t => t.DisplayOrder).GroupBy(t => t.SubjectId));
     }
     

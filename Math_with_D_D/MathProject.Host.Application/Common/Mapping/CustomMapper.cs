@@ -10,6 +10,7 @@ public class CustomMapper : ICustomMapper
     private readonly CustomSubjectMapperProfile _subjectMapperProfile;
     private readonly CustomTrainingCategoryMapperProfile _trainingCategoryMapperProfile;
     private readonly CustomDirectionOfTrainingMapperProfile _directionOfTrainingMapperProfile;
+    private readonly CustomLearningTopicMapperProfile _learningTopicMapperProfile;
     private readonly IMapper _autoMapper;
 
     public CustomMapper(IMapper autoMapper)
@@ -18,10 +19,12 @@ public class CustomMapper : ICustomMapper
         _subjectMapperProfile = new CustomSubjectMapperProfile();
         _trainingCategoryMapperProfile = new CustomTrainingCategoryMapperProfile();
         _directionOfTrainingMapperProfile = new CustomDirectionOfTrainingMapperProfile();
+        _learningTopicMapperProfile = new CustomLearningTopicMapperProfile();
     }
     
     public CustomSubjectMapperProfile SubjectMapperProfile => _subjectMapperProfile;
     public CustomTrainingCategoryMapperProfile TrainingCategoryMapperProfile => _trainingCategoryMapperProfile;
     public CustomDirectionOfTrainingMapperProfile DirectionOfTrainingMapperProfile => _directionOfTrainingMapperProfile;
+    public CustomLearningTopicMapperProfile LearningTopicMapperProfile => _learningTopicMapperProfile;
     public IMapper AutoMapper => _autoMapper;
 }

@@ -9,5 +9,6 @@ public interface ICustomMapper
     CustomTrainingCategoryMapperProfile TrainingCategoryMapperProfile { get; }
     CustomSubjectMapperProfile SubjectMapperProfile { get; }
     CustomDirectionOfTrainingMapperProfile DirectionOfTrainingMapperProfile { get; }
+    CustomLearningTopicMapperProfile LearningTopicMapperProfile { get; }
     IMapper AutoMapper { get; }
 }
