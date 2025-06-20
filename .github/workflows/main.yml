@@ -45,24 +45,24 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           script: |
-            echo "Removing old archive if exists..."
-            rm -rf ~/myapp.tar.gz || true
+            echo "Cleaning up old files..."
+            rm -rf ~/myapp.tar.gz ~/myapp || true
+            mkdir -p ~/myapp
 
             echo "Moving new archive..."
-            mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/myapp.tar.gz
+            mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/
 
-            echo "Creating workspace..."
-            mkdir -p ~/myapp
-            cd ~/myapp
-
-            echo "Removing old files..."
-            rm -rf *
-
-            echo "Moving archive to workdir..."
-            cp ~/myapp.tar.gz .
+            echo "Verifying archive..."
+            if tar -tzf ~/myapp.tar.gz > /dev/null; then
+              echo "Archive is valid."
+            else
+              echo "ERROR: Invalid or corrupted archive!"
+              exit 1
+            fi
 
             echo "Extracting files..."
-            tar -xzf /myapp.tar.gz
+            cd ~/myapp
+            tar -xzf ~/myapp.tar.gz
 
             echo "Check extracted files:"
             ls -la
