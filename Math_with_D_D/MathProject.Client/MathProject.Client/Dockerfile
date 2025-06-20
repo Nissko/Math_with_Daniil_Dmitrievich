@@ -18,4 +18,4 @@ RUN dotnet publish -c Release -o /app/publish
 FROM nginx:alpine
 COPY --from=build /app/publish/wwwroot /usr/share/nginx/html
 COPY --from=build /app/publish /usr/share/nginx/html
-COPY MathProject.Client/nginx.conf /etc/nginx/conf.d/default.conf
+COPY MathProject.Client/MathProject.Client/nginx.conf /etc/nginx/conf.d/default.conf
