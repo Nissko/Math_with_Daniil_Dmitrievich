@@ -1,16 +1,16 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Копируем нужный проект
-COPY MathProject.Client/ MathProject.Client/
-COPY MathProject.Client.Client/ MathProject.Client.Client/
+# Копируем нужные папки из контекста
+COPY MathProject.Client/ ./MathProject.Client/
+COPY MathProject.Client.Client/ ./MathProject.Client.Client/
 
-# Переходим в папку клиента
-WORKDIR /src/MathProject.Client
+# Переходим в нужную директорию
+WORKDIR /src/MathProject.Client.Client
 
-# Восстанавливаем и собираем
-RUN dotnet restore MathProject.Client/MathProject.Client.csproj
-RUN dotnet publish MathProject.Client/MathProject.Client.csproj -c Release -o /app/publish
+# Восстанавливаем и собираем проект
+RUN dotnet restore MathProject.Client.Client.csproj
+RUN dotnet publish -c Release -o /app/publish
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
