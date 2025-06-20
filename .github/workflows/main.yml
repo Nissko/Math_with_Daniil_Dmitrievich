@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           port: 22
-          source: "myapp.tar.gz"
+          source: "archive.tar.gz"
           target: "/home/${{ secrets.VDS_USER }}/myapp.tar.gz"
 
       - name: Extract and Deploy
