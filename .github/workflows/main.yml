@@ -45,24 +45,24 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           script: |
-            echo "Removing old archive if exists..."
-            rm -rf ~/myapp.tar.gz || true
-
-            echo "Moving new archive..."
-            mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/myapp.tar.gz
-
-            echo "Creating workspace..."
+            echo "Cleaning up old files..."
+            rm -rf ~/myapp ~/myapp.tar.gz || true
             mkdir -p ~/myapp
-            cd ~/myapp
 
-            echo "Removing old files..."
-            rm -rf *
+            echo "Check if archive exists..."
+            if [ -f /home/${{ secrets.VDS_USER }}/myapp.tar.gz ]; then
+              echo "Archive found."
+            else
+              echo "ERROR: Archive not found on server!"
+              exit 1
+            fi
 
-            echo "Moving archive to workdir..."
-            cp ~/myapp.tar.gz .
+            echo "Moving archive..."
+            mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/
 
             echo "Extracting files..."
-            tar -xzf /myapp.tar.gz/myapp.tar.gz
+            cd ~/myapp
+            tar -xzf ~/myapp.tar.gz
 
             echo "Check extracted files:"
             ls -la
