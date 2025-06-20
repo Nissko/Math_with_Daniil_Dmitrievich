@@ -1,11 +1,14 @@
 ﻿# Stage 1: Build the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["/root/myapp/Math_with_D_D/MathProject.Client/MathProject.Client/MathProject.Client.csproj", "MathProject.Client/"]
-RUN dotnet restore "MathProject.Client/MathProject.Client.csproj"
+
+# Правильный путь:
+COPY ["MathProject.Client.csproj", "."]
+RUN dotnet restore "MathProject.Client.csproj"
+
 COPY . .
-WORKDIR "/src/MathProject.Client"
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet build "MathProject.Client.csproj" -c Release -o /app/build
+RUN dotnet publish "MathProject.Client.csproj" -c Release -o /app/publish
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
