@@ -1,7 +1,7 @@
 ﻿# Stage 1: Build the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["MathProject.Client/MathProject.Client/MathProject.Client.csproj", "MathProject.Client/"]
+COPY ["/root/myapp/Math_with_D_D/MathProject.Client/MathProject.Client/MathProject.Client.csproj", "MathProject.Client/"]
 RUN dotnet restore "MathProject.Client/MathProject.Client.csproj"
 COPY . .
 WORKDIR "/src/MathProject.Client"
