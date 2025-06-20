@@ -10,7 +10,7 @@
   frontend:
     build:
       context: .
-      dockerfile: MathProject.Client/Dockerfile
+      dockerfile: MathProject.Client/MathProject.Client/Dockerfile
     ports:
       - "80:80"
     restart: always
