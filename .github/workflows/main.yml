@@ -15,15 +15,15 @@ jobs:
 
       - name: Create clean copy
         run: |
-          echo "Creating clean copy of the project..."
+          echo "Creating clean copy..."
           rm -rf ../myapp-copy || true
           cp -r . ../myapp-copy
 
       - name: Archive clean copy
         run: |
-          echo "Archiving clean copy..."
+          echo "Archiving project..."
           cd ../myapp-copy
-          tar -czf ../myapp.tar.gz --exclude=.git .
+          tar -czf myapp.tar.gz --exclude=.git .
 
       - name: Copy via SCP
         uses: appleboy/scp-action@master
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           port: 22
-          source: "../myapp.tar.gz"
+          source: "../myapp-copy/myapp.tar.gz"
           target: "/home/${{ secrets.VDS_USER }}/myapp.tar.gz"
 
       - name: Extract and Deploy
@@ -50,7 +50,12 @@ jobs:
             rm -rf *
 
             echo "Moving archive..."
-            mv ~/myapp.tar.gz .
+            if [ -f ~/myapp.tar.gz ]; then
+              mv ~/myapp.tar.gz .
+            else
+              echo "ERROR: myapp.tar.gz NOT FOUND!"
+              exit 1
+            fi
 
             echo "Extracting files..."
             tar -xzf myapp.tar.gz
