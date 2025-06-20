@@ -38,7 +38,7 @@ jobs:
           source: "myapp.tar.gz"
           target: "/home/${{ secrets.VDS_USER }}/temp-archive.tar.gz"
 
- - name: Extract and Deploy
+      - name: Extract and Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VDS_HOST }}
