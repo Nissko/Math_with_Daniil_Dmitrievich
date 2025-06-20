@@ -44,6 +44,7 @@ public class DirectionOfTrainingRepository : IDirectionOfTrainingRepository
         return await _mapper.LearningTopicMapperProfile.GetLearningTopicsDto(learningTopics);
     }
 
+    //TODO:тест CI/CD
     public async Task SaveChangesAsync(CancellationToken cancellationToken)
     { 
         await _context.SaveChangesAsync(cancellationToken);
