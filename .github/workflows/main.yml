@@ -38,7 +38,7 @@ jobs:
           source: "myapp.tar.gz"
           target: "/home/${{ secrets.VDS_USER }}/temp-archive.tar.gz"
 
-      - name: Extract and Deploy
+ - name: Extract and Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VDS_HOST }}
@@ -49,11 +49,17 @@ jobs:
             rm -rf ~/myapp ~/myapp.tar.gz || true
             mkdir -p ~/myapp
 
-            echo "Moving new archive..."
-            mv ~/temp-archive.tar.gz ~/myapp.tar.gz
+            echo "Check if archive exists in /home/root..."
+            if [ -f /home/root/temp-archive.tar.gz ]; then
+              echo "Archive found. Moving to home directory..."
+              mv /home/root/temp-archive.tar.gz ~/temp-archive.tar.gz
+            else
+              echo "ERROR: Archive not found in /home/root!"
+              exit 1
+            fi
 
             echo "Verifying archive..."
-            if tar -tzf ~/myapp.tar.gz > /dev/null; then
+            if tar -tzf ~/temp-archive.tar.gz > /dev/null; then
               echo "Archive is valid."
             else
               echo "ERROR: Invalid or corrupted archive!"
@@ -62,10 +68,7 @@ jobs:
 
             echo "Extracting files..."
             cd ~/myapp
-            tar -xzf ~/myapp.tar.gz
-
-            echo "Check extracted files:"
-            ls -la
+            tar -xzf ~/temp-archive.tar.gz
 
             echo "Checking docker-compose.yml..."
             if [ -f docker-compose.yml ]; then
@@ -80,4 +83,4 @@ jobs:
             docker-compose up -d --build
 
             echo "Cleanup..."
-            rm -f ~/myapp.tar.gz
+            rm -f ~/temp-archive.tar.gz
