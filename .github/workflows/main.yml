@@ -49,14 +49,6 @@ jobs:
             rm -rf ~/myapp ~/myapp.tar.gz || true
             mkdir -p ~/myapp
 
-            echo "Check if archive exists..."
-            if [ -f /home/${{ secrets.VDS_USER }}/myapp.tar.gz ]; then
-              echo "Archive found."
-            else
-              echo "ERROR: Archive not found on server!"
-              exit 1
-            fi
-
             echo "Moving archive..."
             mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/
 
