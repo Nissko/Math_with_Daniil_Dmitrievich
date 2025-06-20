@@ -1,4 +1,4 @@
-name: Deploy with Docker
+name: Deploy to VDS
 
 on:
   push:
@@ -13,47 +13,62 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Create clean copy
+        run: |
+          echo "Creating clean copy of the project..."
+          rm -rf ../myapp-copy || true
+          cp -r . ../myapp-copy
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
+      - name: Archive clean copy
+        run: |
+          echo "Archiving clean copy..."
+          cd ../myapp-copy
+          tar -czf ../myapp.tar.gz --exclude=.git .
+
+      - name: Copy via SCP
+        uses: appleboy/scp-action@master
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          password: ${{ secrets.VDS_PASSWORD }}
+          port: 22
+          source: "../myapp.tar.gz"
+          target: "/home/${{ secrets.VDS_USER }}/myapp.tar.gz"
 
-      - name: Build and Push Backend
-        uses: docker/build-push-action@v5
-        with:
-          context: ./Math_with_D_D
-          file: ./MathProject.Host.API/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mywebapi:latest
-
-      - name: Build and Push Frontend
-        uses: docker/build-push-action@v5
-        with:
-          context: ./Math_with_D_D
-          file: ./MathProject.Client/MathProject.Client/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/myblazor:latest
-
-      - name: Deploy via SSH
+      - name: Extract and Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VDS_HOST }}
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           script: |
-            echo "Pulling images..."
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/mywebapi:latest
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/myblazor:latest
+            echo "Creating workspace..."
+            mkdir -p ~/myapp
+            cd ~/myapp
 
-            echo "Stopping containers..."
+            echo "Removing old files..."
+            rm -rf *
+
+            echo "Moving archive..."
+            mv ~/myapp.tar.gz .
+
+            echo "Extracting files..."
+            tar -xzf myapp.tar.gz
+
+            echo "Check extracted files:"
+            ls -la
+
+            echo "Checking docker-compose.yml..."
+            if [ -f docker-compose.yml ]; then
+              echo "docker-compose.yml found."
+            else
+              echo "ERROR: docker-compose.yml NOT FOUND!"
+              exit 1
+            fi
+
+            echo "Building Docker images..."
             docker-compose down
+            docker-compose up -d --build
 
-            echo "Starting new containers..."
-            docker-compose up -d
-
-            echo "Cleanup unused images..."
-            docker image prune -af
+            echo "Cleanup..."
+            rm -f myapp.tar.gz
