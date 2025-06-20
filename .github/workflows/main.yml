@@ -1,4 +1,4 @@
-name: Deploy to VDS (WORKING VERSION)
+name: Deploy to VDS
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.VDS_PASSWORD }}
           port: 22
           source: "myapp.tar.gz"
-          target: "/home/${{ secrets.VDS_USER }}/temp-archive.tar.gz"
+          target: "/home/${{ secrets.VDS_USER }}/myapp.tar.gz"
 
       - name: Extract and Deploy
         uses: appleboy/ssh-action@master
@@ -45,29 +45,27 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           password: ${{ secrets.VDS_PASSWORD }}
           script: |
-            echo "Cleaning up old files..."
-            rm -rf ~/myapp ~/myapp.tar.gz || true
+            echo "Removing old archive if exists..."
+            rm -rf ~/myapp.tar.gz || true
+
+            echo "Moving new archive..."
+            mv /home/${{ secrets.VDS_USER }}/myapp.tar.gz ~/myapp.tar.gz
+
+            echo "Creating workspace..."
             mkdir -p ~/myapp
+            cd ~/myapp
 
-            echo "Check if archive exists in home directory..."
-            if [ -f ~/temp-archive.tar.gz ]; then
-              echo "Archive found locally."
-            else
-              echo "ERROR: Archive not received via SCP!"
-              exit 1
-            fi
+            echo "Removing old files..."
+            rm -rf *
 
-            echo "Verifying archive..."
-            if tar -tzf ~/temp-archive.tar.gz > /dev/null; then
-              echo "Archive is valid."
-            else
-              echo "ERROR: Invalid or corrupted archive!"
-              exit 1
-            fi
+            echo "Moving archive to workdir..."
+            cp ~/myapp.tar.gz .
 
             echo "Extracting files..."
-            cd ~/myapp
-            tar -xzf ~/temp-archive.tar.gz
+            tar -xzf /myapp.tar.gz/myapp.tar.gz
+
+            echo "Check extracted files:"
+            ls -la
 
             echo "Checking docker-compose.yml..."
             if [ -f docker-compose.yml ]; then
@@ -82,4 +80,4 @@ jobs:
             docker-compose up -d --build
 
             echo "Cleanup..."
-            rm -f ~/temp-archive.tar.gz
+            rm -f ~/myapp.tar.gz
