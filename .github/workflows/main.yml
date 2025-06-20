@@ -15,8 +15,18 @@ jobs:
 
       - name: Create git archive
         run: |
-          echo "Creating clean archive with git..."
+          echo "Creating clean archive..."
           git archive --format=tar.gz -o myapp.tar.gz HEAD
+
+      - name: Check archive exists
+        run: |
+          if [ -f myapp.tar.gz ]; then
+            echo "Archive created successfully."
+            ls -la myapp.tar.gz
+          else
+            echo "ERROR: Archive was NOT created!"
+            exit 1
+          fi
 
       - name: Copy via SCP
         uses: appleboy/scp-action@master
@@ -46,7 +56,7 @@ jobs:
             if [ -f ~/myapp.tar.gz ]; then
               mv ~/myapp.tar.gz .
             else
-              echo "ERROR: myapp.tar.gz NOT FOUND!"
+              echo "ERROR: myapp.tar.gz NOT FOUND on server!"
               exit 1
             fi
 
