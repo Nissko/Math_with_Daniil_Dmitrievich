@@ -25,16 +25,16 @@ jobs:
       - name: Build and Push Backend
         uses: docker/build-push-action@v5
         with:
-          context: ./Backend
-          file: ./Backend/Dockerfile
+          context: ./Math_with_D_D
+          file: ./MathProject.Host.API/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mywebapi:latest
 
       - name: Build and Push Frontend
         uses: docker/build-push-action@v5
         with:
-          context: ./Frontend
-          file: ./Frontend/Dockerfile
+          context: ./Math_with_D_D
+          file: ./MathProject.Client/MathProject.Client/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/myblazor:latest
 
