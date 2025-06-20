@@ -49,12 +49,22 @@ jobs:
             echo "Removing old files..."
             rm -rf *
 
-            echo "Moving new archive..."
+            echo "Moving archive..."
             mv ~/myapp.tar.gz .
+
+            echo "Extracting files..."
             tar -xzf myapp.tar.gz
 
-            echo "Copying docker-compose.yml..."
-            cp app/docker-compose.yml .
+            echo "Check extracted files:"
+            ls -la
+
+            echo "Checking docker-compose.yml..."
+            if [ -f docker-compose.yml ]; then
+              echo "docker-compose.yml found."
+            else
+              echo "ERROR: docker-compose.yml NOT FOUND!"
+              exit 1
+            fi
 
             echo "Building Docker images..."
             docker-compose down
