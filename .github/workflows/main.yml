@@ -61,14 +61,6 @@ jobs:
             echo "Moving archive to workdir..."
             cp ~/myapp.tar.gz .
 
-            echo "Checking archive integrity..."
-            if tar -tzf myapp.tar.gz > /dev/null; then
-              echo "Archive is valid."
-            else
-              echo "ERROR: Archive is corrupted or not a valid .tar.gz file!"
-              exit 1
-            fi
-
             echo "Extracting files..."
             tar -xzf myapp.tar.gz
 
