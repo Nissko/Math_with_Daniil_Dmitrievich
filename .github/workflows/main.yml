@@ -60,7 +60,7 @@ jobs:
             ls -la
 
             echo "Checking docker-compose.yml..."
-            if [ -f docker-compose.yml ]; then
+            if [ -f /root/myapp/Math_with_D_D/docker-compose.yml ]; then
               echo "docker-compose.yml found."
             else
               echo "ERROR: docker-compose.yml NOT FOUND!"
