@@ -49,12 +49,11 @@ jobs:
             rm -rf ~/myapp ~/myapp.tar.gz || true
             mkdir -p ~/myapp
 
-            echo "Check if archive exists in /home/root..."
-            if [ -f /home/root/temp-archive.tar.gz ]; then
-              echo "Archive found. Moving to home directory..."
-              mv /home/root/temp-archive.tar.gz ~/temp-archive.tar.gz
+            echo "Check if archive exists in home directory..."
+            if [ -f ~/temp-archive.tar.gz ]; then
+              echo "Archive found locally."
             else
-              echo "ERROR: Archive not found in /home/root!"
+              echo "ERROR: Archive not received via SCP!"
               exit 1
             fi
 
