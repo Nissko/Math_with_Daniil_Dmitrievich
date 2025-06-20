@@ -1,17 +1,21 @@
-﻿# Используем SDK для восстановления и сборки
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Правильный путь:
-COPY ["MathProject.Host.API.csproj", "."]
-RUN dotnet restore "MathProject.Host.API.csproj"
+# Копируем .sln и все проекты
+COPY *.sln .
+COPY MathProject.Host.API/ MathProject.Host.API/
+COPY MathProject.Host.Application/ MathProject.Host.Application/
+COPY MathProject.Host.Domain/ MathProject.Host.Domain/
+COPY MathProject.Host.Infrastructure/ MathProject.Host.Infrastructure/
 
-COPY . .
-WORKDIR "/src/MathProject.Host.API"
-RUN dotnet build "MathProject.Host.API.csproj" -c Release -o /app/build
-RUN dotnet publish "MathProject.Host.API.csproj" -c Release -o /app/publish
+# Восстанавливаем всё решение
+WORKDIR /src/MathProject.Host.API
+RUN dotnet restore ../Math_with_D_D.sln
 
-# Запуск
+# Собираем
+RUN dotnet build -c Release -o /app/build
+RUN dotnet publish -c Release -o /app/publish
+
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/publish .

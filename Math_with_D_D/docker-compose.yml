@@ -1,20 +1,16 @@
-﻿version: '3.8'
-
-services:
+﻿services:
   backend:
     build:
-      context: ./MathProject.Host.API
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: MathProject.Host.API/Dockerfile
     ports:
       - "5000:80"
-    depends_on:
-      - postgres
     restart: always
 
   frontend:
     build:
-      context: ./MathProject.Client/MathProject.Client
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: MathProject.Client/Dockerfile
     ports:
       - "80:80"
     restart: always
