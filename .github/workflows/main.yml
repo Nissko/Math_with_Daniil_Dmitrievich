@@ -1,4 +1,4 @@
-name: Deploy to VDS with Docker Build
+name: Deploy to VDS with Docker Build (Direct SSH)
 
 on:
   push:
@@ -13,18 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Archive project files
+      - name: Archive files
         run: |
           echo "Archiving project..."
           tar -czf myapp.tar.gz --exclude=.git .
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Copy via SCP
+        uses: appleboy/scp-action@master
         with:
-          name: myapp-archive
-          path: myapp.tar.gz
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          password: ${{ secrets.VDS_PASSWORD }}
+          port: 22
+          source: "myapp.tar.gz"
+          target: "/home/${{ secrets.VDS_USER }}/myapp.tar.gz"
 
-      - name: Download and extract on VDS
+      - name: Extract and Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VDS_HOST }}
@@ -36,16 +40,16 @@ jobs:
             cd ~/myapp
 
             echo "Removing old files..."
-            rm -rf app.tar.gz app/
+            rm -rf *
 
-            echo "Receiving new files..."
-            cp /tmp/myapp.tar.gz .
+            echo "Moving new archive..."
+            mv ~/myapp.tar.gz .
             tar -xzf myapp.tar.gz
 
-            echo "Copying compose files..."
+            echo "Copying docker-compose.yml..."
             cp ~/myapp/app/docker-compose.yml .
 
-            echo "Building and restarting containers..."
+            echo "Building Docker images..."
             docker-compose down
             docker-compose up -d --build
 
