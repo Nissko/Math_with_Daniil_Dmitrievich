@@ -62,7 +62,7 @@ jobs:
             cp ~/myapp.tar.gz .
 
             echo "Extracting files..."
-            tar -xzf myapp.tar.gz
+            tar -xzf /myapp.tar.gz
 
             echo "Check extracted files:"
             ls -la
