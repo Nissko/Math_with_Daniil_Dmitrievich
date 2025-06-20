@@ -54,7 +54,7 @@ jobs:
 
             echo "Extracting files..."
             cd ~/myapp
-            tar -xzf ~/archive.tar.gz
+            tar -xzf /root/myapp.tar.gz/archive.tar.gz
 
             echo "Check extracted files:"
             ls -la
