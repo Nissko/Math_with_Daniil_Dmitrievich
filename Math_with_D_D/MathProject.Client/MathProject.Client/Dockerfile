@@ -1,18 +1,24 @@
-﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+USER $APP_UID
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["MathProject.Client/MathProject.Client/MathProject.Client.csproj", "MathProject.Client/MathProject.Client/"]
+COPY ["MathProject.Client/MathProject.Client.Client/MathProject.Client.Client.csproj", "MathProject.Client/MathProject.Client.Client/"]
+RUN dotnet restore "MathProject.Client/MathProject.Client/MathProject.Client.csproj"
+COPY . .
+WORKDIR "/src/MathProject.Client/MathProject.Client"
+RUN dotnet build "./MathProject.Client.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Копируем нужный проект
-COPY MathProject.Client/ MathProject.Client/
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./MathProject.Client.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# Переходим в папку клиента
-WORKDIR /src/MathProject.Client
-
-# Восстанавливаем и собираем
-RUN dotnet restore MathProject.Client/MathProject.Client.csproj
-RUN dotnet publish -c Release -o /app/publish
-
-# Stage 2: Serve with nginx
-FROM nginx:alpine
-COPY --from=build /app/publish/wwwroot /usr/share/nginx/html
-COPY --from=build /app/publish /usr/share/nginx/html
-COPY MathProject.Client/MathProject.Client/nginx.conf /etc/nginx/conf.d/default.conf
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "MathProject.Client.dll"]
