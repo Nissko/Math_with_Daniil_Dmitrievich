@@ -53,7 +53,7 @@ jobs:
             rm -rf *
 
             echo "Moving archive..."
-            mv home/root/myapp.tar.gz .
+            mv /home/root/myapp.tar.gz .
 
             echo "Extracting files..."
             tar -xzf myapp.tar.gz
