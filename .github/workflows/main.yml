@@ -72,4 +72,4 @@ jobs:
             docker-compose up -d --build
 
             echo "Cleanup..."
-            rm -f ~/myapp.tar.gz
+            rm -f /root/myapp.tar.gz
