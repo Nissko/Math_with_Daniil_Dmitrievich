@@ -8,8 +8,8 @@ COPY MathProject.Client/ MathProject.Client/
 WORKDIR /src/MathProject.Client
 
 # Восстанавливаем и собираем
-RUN dotnet restore MathProject.Client.csproj
-RUN dotnet publish MathProject.Client.csproj -c Release -o /app/publish
+RUN dotnet restore MathProject.Client/MathProject.Client.csproj
+RUN dotnet publish MathProject.Client/MathProject.Client.csproj -c Release -o /app/publish
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
