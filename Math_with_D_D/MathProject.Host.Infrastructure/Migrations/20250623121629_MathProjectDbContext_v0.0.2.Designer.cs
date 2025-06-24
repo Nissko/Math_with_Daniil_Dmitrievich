@@ -3,17 +3,20 @@ using System;
 using MathProject.Host.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace MathProject.Host.Infrastructure.Persistence.Providers.Migrations
+namespace MathProject.Host.Infrastructure.Migrations
 {
     [DbContext(typeof(MathProjectContext))]
-    partial class MathProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20250623121629_MathProjectDbContext_v0.0.2")]
+    partial class MathProjectDbContext_v002
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

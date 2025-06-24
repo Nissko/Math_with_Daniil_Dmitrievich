@@ -12,6 +12,11 @@ internal class LearningTopicsConfiguration : IEntityTypeConfiguration<LearningTo
         builder.HasKey(x => x.Id);
 
         builder
+            .Property<string>("_number")
+            .HasColumnName("Number")
+            .IsRequired();
+        
+        builder
             .Property<string>("_name")
             .HasColumnName("Name")
             .IsRequired();

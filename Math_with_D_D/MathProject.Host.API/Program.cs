@@ -9,18 +9,18 @@ build.RegisterModule(new ApplicationModule());
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services
+    .AddMathProjectCollectionInfrastructure(builder.Configuration)
+    .AddApplication();
+
 // Настройка CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowBlazorClient",
-        builder => builder.WithOrigins("https://localhost:7236")
+        builder => builder.WithOrigins("https://localhost:7136")
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
-
-builder.Services
-    .AddMathProjectCollectionInfrastructure(builder.Configuration)
-    .AddApplication();
 
 builder.Host.UseServiceProviderFactory(new AutofacChildLifetimeScopeServiceProviderFactory(build.Build()));
 
@@ -32,6 +32,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseCors("AllowBlazorClient");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -41,7 +42,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();

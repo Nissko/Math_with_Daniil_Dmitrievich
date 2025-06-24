@@ -26,6 +26,7 @@ public static class ServiceCollectionExtension
         services.AddScoped<ISubjectRepository, SubjectRepository>();
         services.AddScoped<ITrainingCategoryRepository, TrainingCategoriesRepository>();
         services.AddScoped<IDirectionOfTrainingRepository, DirectionOfTrainingRepository>();
+        services.AddScoped<ILearningTopicsRepository, LearningTopicsRepository>();
             
         services.AddApplication();
         

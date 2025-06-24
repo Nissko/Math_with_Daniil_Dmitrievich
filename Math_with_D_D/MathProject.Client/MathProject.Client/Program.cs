@@ -1,3 +1,5 @@
+using MathProject.Client.Client.Interfaces;
+using MathProject.Client.Client.Services.CookieService;
 using MudBlazor.Services;
 using MathProject.Client.Components;
 
@@ -5,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add MudBlazor services
 builder.Services.AddMudServices();
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7282/") });
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

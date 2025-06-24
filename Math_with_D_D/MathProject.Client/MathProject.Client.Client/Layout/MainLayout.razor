@@ -1,4 +1,8 @@
-﻿@inherits LayoutComponentBase
+﻿@using MathProject.Client.Client.DTOS
+@using MathProject.Client.Client.Interfaces
+@using MathProject.Client.Client.Services.CookieService.Options
+@inherits LayoutComponentBase
+@inject HttpClient HttpClient
 
 <MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode"/>
 <MudPopoverProvider/>
@@ -19,33 +23,27 @@
             <MudMenu StartIcon="@Icons.Material.TwoTone.Settings"
                      IconColor="Color.Primary"
                      Label="Предмет подготовки">
-                <MudMenuItem Icon="@Icons.Material.Filled.Check"
-                             IconColor="Color.Success"
-                             Label="Математика" />
-                <MudMenuItem Icon="@Icons.Material.Filled.Block"
-                             IconColor="Color.Secondary"
-                             Label="Физика" />
-                <MudMenuItem Icon="@Icons.Material.Filled.Block"
-                             IconColor="Color.Secondary"
-                             Label="Русский язык" />
-                <MudMenuItem Icon="@Icons.Material.Filled.Block"
-                             IconColor="Color.Secondary"
-                             Label="Информатика" />
+                @foreach (var subject in _subjects)
+                {
+                    <MudMenuItem Icon="@Icons.Material.Filled.Check"
+                                 IconColor="Color.Success"
+                                 Label="@subject.Name"/>
+                }
             </MudMenu>
 
-            <MudDivider />
+            <MudDivider/>
 
             <MudMenuItem Href="/"
                          ForceLoad
                          Icon="@Icons.Material.TwoTone.Login"
                          IconColor="Color.Primary"
-                         Label="Sign In" />
+                         Label="Sign In"/>
 
             <MudMenuItem Href="/"
                          ForceLoad
                          Icon="@Icons.Material.TwoTone.Logout"
                          IconColor="Color.Primary"
-                         Label="Sign Out" />
+                         Label="Sign Out"/>
         </MudMenu>
     </MudAppBar>
     <MudDrawer id="nav-drawer" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
@@ -64,23 +62,31 @@
 </div>
 
 @code {
-    private bool _drawerOpen = true;
+    private bool _drawerOpen = false;
     private bool _isDarkMode = true;
     private MudTheme? _theme = null;
     
     /*Мои переменные*/
-    private string _subjects;
+    private ClientSubjectDTO[]? _subjects;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        base.OnInitialized();
-
+        _drawerOpen = false;
+        await base.OnInitializedAsync();
+        
         _theme = new()
         {
             PaletteLight = _lightPalette,
             PaletteDark = _darkPalette,
             LayoutProperties = new LayoutProperties()
         };
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    { 
+        await base.OnAfterRenderAsync(firstRender);
+        
+        _subjects = await HttpClient.GetFromJsonAsync<ClientSubjectDTO[]?>("Subject");
     }
 
     private void DrawerToggle()
@@ -137,5 +143,4 @@
         true => Icons.Material.Filled.WbSunny,
         false => Icons.Material.Outlined.DarkMode,
     };
-
 }

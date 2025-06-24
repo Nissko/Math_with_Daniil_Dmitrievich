@@ -1,5 +1,5 @@
 1)
-Add-Migration -Context MathProjectContext -o Persistence\Providers\Migrations\MathProjectDbContext_v0.0.1
+Add-Migration -Context MathProjectContext -o Persistence\Providers\Migrations\MathProjectDbContext_v0.0.3
 
 2) 
 Update-DataBase -context MathProjectContext
