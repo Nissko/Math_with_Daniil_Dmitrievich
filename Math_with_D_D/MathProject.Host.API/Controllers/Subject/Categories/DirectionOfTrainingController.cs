@@ -47,6 +47,19 @@ public class DirectionOfTrainingController : ControllerBase
 
         return Ok(result);
     }
+
+    /// <summary>
+    /// Получение направлений обучения по id предмета
+    /// </summary>
+    [HttpGet("get-direcrion-of-trainigng-from-subject-id/{subjectId}")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    public async Task<IActionResult> GetDirectionOfTrainingsBySubjectId(Guid subjectId)
+    {
+        var result = await _directionOfTrainingRepository
+            .GetDirectionOfTrainingsBySubjectIdAsync(subjectId);
+
+        return Ok(result);
+    }
     
     /// <summary>
     /// Получение всех тем обучения по directionOfTrainingId

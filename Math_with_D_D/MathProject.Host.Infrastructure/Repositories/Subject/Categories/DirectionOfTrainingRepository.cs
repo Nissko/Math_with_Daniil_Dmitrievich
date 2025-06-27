@@ -19,7 +19,10 @@ public class DirectionOfTrainingRepository : IDirectionOfTrainingRepository
     public async Task<IEnumerable<DirectionOfTrainingDTO>> GetDirectionOfTrainingsAsync()
     {
         var directionOfTrainings = await _context.DirectionOfTraining.ToListAsync();
-        return await _mapper.DirectionOfTrainingMapperProfile.GetDirectionOfTrainingDtos(directionOfTrainings);
+        
+        return directionOfTrainings.Any()
+            ? await _mapper.DirectionOfTrainingMapperProfile.GetDirectionOfTrainingDtos(directionOfTrainings)
+            : new List<DirectionOfTrainingDTO>();
     }
 
     public async Task<DirectionOfTrainingDTO> GetDirectionOfTrainingsByIdAsync(Guid directionOfTrainingId)
@@ -31,6 +34,16 @@ public class DirectionOfTrainingRepository : IDirectionOfTrainingRepository
                 $"Направление обучения с идентификатором {directionOfTrainingId} не найдено в системе");
 
         return _mapper.DirectionOfTrainingMapperProfile.GetDirectionOfTrainingDto(directionOfTraining);
+    }
+
+    public async Task<IEnumerable<DirectionOfTrainingDTO>> GetDirectionOfTrainingsBySubjectIdAsync(Guid subjectId)
+    {
+        var directionOfTrainings = await _context.DirectionOfTraining
+            .Where(dot => dot.TrainingCategory.Subject.Id == subjectId).ToListAsync();
+
+        return directionOfTrainings.Any()
+            ? await _mapper.DirectionOfTrainingMapperProfile.GetDirectionOfTrainingDtos(directionOfTrainings)
+            : new List<DirectionOfTrainingDTO>();
     }
 
     public async Task<IEnumerable<LearningTopicDTO>> GetLearningTopicsAsync(Guid directionOfTrainingId)

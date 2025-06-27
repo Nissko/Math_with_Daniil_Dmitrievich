@@ -17,6 +17,7 @@ public class CustomDirectionOfTrainingMapperProfile : IMapperProfile
         return new DirectionOfTrainingDTO
         {
             Id = directionOfTraining.Id,
+            TrainingCategoryId = directionOfTraining.TrainingCategory.Id,
             Name = directionOfTraining.Name,
             Date = directionOfTraining.DateTrainingDir,
             DisplayOrder = int.Parse(directionOfTraining.DisplayOrder),

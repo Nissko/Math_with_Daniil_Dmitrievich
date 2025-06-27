@@ -15,6 +15,11 @@ public interface IDirectionOfTrainingRepository
     Task<DirectionOfTrainingDTO> GetDirectionOfTrainingsByIdAsync(Guid directionOfTrainingId);
     
     /// <summary>
+    /// Получение направлений обучения по id предмета
+    /// </summary>
+    Task<IEnumerable<DirectionOfTrainingDTO>> GetDirectionOfTrainingsBySubjectIdAsync(Guid subjectId);
+    
+    /// <summary>
     /// Получение всех тем обучения по directionOfTrainingId
     /// </summary>
     Task<IEnumerable<LearningTopicDTO>> GetLearningTopicsAsync(Guid directionOfTrainingId);
