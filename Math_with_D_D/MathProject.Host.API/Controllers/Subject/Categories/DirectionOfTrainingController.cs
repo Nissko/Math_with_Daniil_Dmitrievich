@@ -51,7 +51,7 @@ public class DirectionOfTrainingController : ControllerBase
     /// <summary>
     /// Получение направлений обучения по id предмета
     /// </summary>
-    [HttpGet("get-direcrion-of-trainigng-from-subject-id/{subjectId}")]
+    [HttpGet("get-direction-of-training-from-subject-id/{subjectId}")]
     [Consumes(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetDirectionOfTrainingsBySubjectId(Guid subjectId)
     {
